@@ -16,17 +16,26 @@ O agente implementa o padrão **ReAct (Reasoning + Acting)** de forma didática 
 
 ```
 03_CODIGOS_PRONTOS/
+├── setup.bat                      # Script automático Windows (NOVO!)
+├── setup.sh                       # Script automático Linux/Mac (NOVO!)
+├── verify_setup.py                # Verificador de instalação (NOVO!)
+├── requirements.txt               # Dependências do projeto
+├── README.md                      # Este arquivo
+├── .gitignore                     # Arquivos ignorados pelo Git
+│
 ├── E1_agente_react_v3.py          # Agente principal com padrão ReAct
 ├── E1_tools_sinarm.py             # Ferramentas para consulta aos datasets
 ├── TESTES_COMPLETOS.py            # Suite de testes automatizados
 ├── agente_v1.8.py                 # Versão anterior (referência)
+│
 ├── DADOS_SINARM/                  # Datasets SINARM organizados
 │   ├── OCORRENCIAS/               # Furtos, apreensões, recuperações (4 arquivos CSV)
 │   ├── PORTES/                    # Portes de armas (4 arquivos CSV)
 │   ├── REGISTROS/                 # Registros de armas (9 arquivos CSV)
 │   └── REQUERIMENTOS/             # Requerimentos de porte/registro (8 arquivos CSV)
+│
 ├── logs/                          # Logs de execução do agente
-└── __pycache__/                   # Cache Python (não versionado)
+└── venv/                          # Ambiente virtual (criado pelo setup)
 ```
 
 ---
@@ -86,13 +95,51 @@ git --version
 
 ## Instalação
 
-### Passo 1: Clone o repositório
+### Opção 1: Instalação Automatizada (RECOMENDADO)
+
+Criamos scripts que configuram tudo automaticamente para você!
+
+#### Windows:
 ```bash
-git clone <URL_DO_SEU_REPOSITORIO>
-cd 03_CODIGOS_PRONTOS
+# 1. Clone o repositório
+git clone https://github.com/yurilq/IBMEC_DESENVOLVIMENTO_AGENTE_2026.git
+cd IBMEC_DESENVOLVIMENTO_AGENTE_2026
+
+# 2. Execute o script de configuração
+setup.bat
 ```
 
-### Passo 2: Crie um ambiente virtual
+#### Linux/Mac:
+```bash
+# 1. Clone o repositório
+git clone https://github.com/yurilq/IBMEC_DESENVOLVIMENTO_AGENTE_2026.git
+cd IBMEC_DESENVOLVIMENTO_AGENTE_2026
+
+# 2. Dê permissão de execução e execute
+chmod +x setup.sh
+./setup.sh
+```
+
+**O que o script faz:**
+- ✅ Verifica versão do Python (3.8+)
+- ✅ Cria ambiente virtual automaticamente
+- ✅ Instala todas as dependências
+- ✅ Verifica se Ollama está instalado
+- ✅ Valida a instalação completa
+
+---
+
+### Opção 2: Instalação Manual
+
+Se preferir fazer passo a passo:
+
+#### Passo 1: Clone o repositório
+```bash
+git clone https://github.com/yurilq/IBMEC_DESENVOLVIMENTO_AGENTE_2026.git
+cd IBMEC_DESENVOLVIMENTO_AGENTE_2026
+```
+
+#### Passo 2: Crie um ambiente virtual
 ```bash
 # Windows
 python -m venv venv
@@ -103,9 +150,14 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-### Passo 3: Instale as dependências
+#### Passo 3: Instale as dependências
 ```bash
 pip install -r requirements.txt
+```
+
+#### Passo 4: Verifique a instalação
+```bash
+python verify_setup.py
 ```
 
 ---
@@ -207,9 +259,62 @@ logs/
 
 ---
 
+## Scripts de Automação
+
+O repositório inclui scripts que automatizam a configuração do ambiente:
+
+### setup.bat (Windows)
+Script automatizado para Windows que:
+- Verifica versão do Python
+- Cria ambiente virtual
+- Instala dependências
+- Verifica instalação do Ollama
+- Valida toda a configuração
+
+**Uso:**
+```bash
+setup.bat
+```
+
+### setup.sh (Linux/Mac)
+Script automatizado para Linux/Mac que faz o mesmo que o setup.bat.
+
+**Uso:**
+```bash
+chmod +x setup.sh
+./setup.sh
+```
+
+### verify_setup.py
+Script Python que verifica se o ambiente está configurado corretamente:
+- Versão do Python
+- Dependências instaladas
+- Arquivos do projeto
+- Integridade dos datasets
+- Importação dos módulos
+
+**Uso:**
+```bash
+python verify_setup.py
+```
+
+---
+
 ## Troubleshooting
 
-### Problema 1: Ollama não encontrado
+### Problema 1: Erros na instalação
+**Solução rápida:**
+```bash
+# Windows
+setup.bat
+
+# Linux/Mac
+./setup.sh
+```
+
+Os scripts automatizados resolvem 90% dos problemas de instalação!
+
+### Problema 2: Ollama não encontrado
 ```
 Erro: Ollama model not found
 ```
@@ -218,7 +323,7 @@ Erro: Ollama model not found
 2. Baixe o modelo: `ollama pull llama3`
 3. Verifique se o serviço está rodando
 
-### Problema 2: Erro de encoding (Windows)
+### Problema 3: Erro de encoding (Windows)
 ```
 Erro: UnicodeEncodeError
 ```
@@ -229,21 +334,35 @@ set PYTHONIOENCODING=utf-8
 python E1_agente_react_v3.py
 ```
 
-### Problema 3: Arquivos CSV não encontrados
+### Problema 4: Arquivos CSV não encontrados
 ```
 Erro: FileNotFoundError: [Errno 2] No such file or directory
 ```
 **Solução:**
 Verifique se a pasta `DADOS_SINARM/` está no mesmo diretório dos scripts Python.
 
-### Problema 4: Dependências não instaladas
+### Problema 5: Dependências não instaladas
 ```
 Erro: ModuleNotFoundError: No module named 'langchain'
 ```
 **Solução:**
 ```bash
+# Instalação manual
 pip install -r requirements.txt
+
+# Ou use o script automatizado
+setup.bat  # Windows
+./setup.sh # Linux/Mac
 ```
+
+### Problema 6: Versão do Python incompatível
+**Solução:**
+Execute `python verify_setup.py` para verificar sua versão.
+
+**Versão mínima:** Python 3.8  
+**Versão recomendada:** Python 3.10+
+
+Se sua versão for antiga, atualize em: https://www.python.org/downloads/
 
 ---
 
