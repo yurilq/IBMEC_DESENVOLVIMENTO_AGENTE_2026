@@ -1,0 +1,53 @@
+# AGENTE INVESTIGADOR SINARM - E1: ANATOMIA DO AGENTE
+# Requirements para Python 3.8+
+
+# ========== CORE DEPENDENCIES ==========
+
+# LangChain - Framework principal para agentes
+langchain>=0.1.0
+langchain-core>=0.1.0
+langchain-community>=0.0.13
+
+# Ollama Integration
+langchain-ollama>=0.1.0
+
+# ========== DATA PROCESSING ==========
+
+# Pandas - Manipulação de dados CSV
+pandas>=2.0.0
+
+# NumPy - Computação numérica (requerido pelo Pandas)
+numpy>=1.24.0
+
+# ========== UTILITIES ==========
+
+# Python-dotenv - Gerenciamento de variáveis de ambiente
+python-dotenv>=1.0.0
+
+# ========== OPTIONAL (DESENVOLVIMENTO) ==========
+
+# Pytest - Testes automatizados (opcional)
+# pytest>=7.4.0
+
+# IPython - Debugging interativo (opcional)
+# ipython>=8.12.0
+
+# ========== NOTAS ==========
+
+# 1. OLLAMA:
+#    Este projeto requer Ollama instalado localmente
+#    Instale em: https://ollama.ai
+#    Após instalar: ollama pull llama3
+
+# 2. PYTHON VERSION:
+#    Testado em Python 3.8, 3.9, 3.10, 3.11
+#    Recomendado: Python 3.10+
+
+# 3. INSTALAÇÃO:
+#    pip install -r requirements.txt
+
+# 4. AMBIENTE VIRTUAL (recomendado):
+#    python -m venv venv
+#    venv\Scripts\activate  # Windows
+#    source venv/bin/activate  # Linux/Mac
+#    pip install -r requirements.txt
