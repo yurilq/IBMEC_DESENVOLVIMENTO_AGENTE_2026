@@ -1,448 +1,443 @@
-# Agente Investigador SINARM - E1: Anatomia do Agente
+# 🎓 Desenvolvimento de Agentes - Códigos Prontos
 
-## Descrição do Projeto
+## 📋 Visão Geral
 
-Este repositório contém o código-fonte desenvolvido durante o **Encontro 1 (E1)** da disciplina **Desenvolvimento de Agentes** do curso de MBA. O objetivo é criar um agente investigador inteligente usando LangChain e Ollama para consultar datasets reais do SINARM (Sistema Nacional de Armas).
+Este repositório contém **todo o código prático** da disciplina **Desenvolvimento de Agentes** do MBA em IA.
 
-O agente implementa o padrão **ReAct (Reasoning + Acting)** de forma didática e simplificada, permitindo que os alunos compreendam:
-- Ciclo ReAct manual (Thought → Action → Observation)
-- Como estruturar chamadas a ferramentas (tools)
-- Debug e logging em produção
-- Tratamento de dados reais de segurança pública
+**Estrutura**: Organizado por **encontros** (E1, E2, E3...), cada um com **conceitos modulares** + **solução final integrada**.
 
 ---
 
-## Estrutura do Projeto
+## 📂 Estrutura Organizada
 
 ```
 03_CODIGOS_PRONTOS/
-├── setup.bat                      # Script automático Windows (NOVO!)
-├── setup.sh                       # Script automático Linux/Mac (NOVO!)
-├── verify_setup.py                # Verificador de instalação (NOVO!)
-├── requirements.txt               # Dependências do projeto
-├── README.md                      # Este arquivo
-├── .gitignore                     # Arquivos ignorados pelo Git
 │
-├── E1_agente_react_v3.py          # Agente principal com padrão ReAct
-├── E1_tools_sinarm.py             # Ferramentas para consulta aos datasets
-├── TESTES_COMPLETOS.py            # Suite de testes automatizados
-├── agente_v1.8.py                 # Versão anterior (referência)
+├── README.md                       # Este arquivo (navegação principal)
+├── requirements.txt                # Dependências Python (todas)
+├── .gitignore
+├── setup.bat                       # Setup Windows
+├── setup.sh                        # Setup Linux/Mac
+├── verify_setup.py                 # Verificar instalação
 │
-├── DADOS_SINARM/                  # Datasets SINARM organizados
-│   ├── OCORRENCIAS/               # Furtos, apreensões, recuperações (4 arquivos CSV)
-│   ├── PORTES/                    # Portes de armas (4 arquivos CSV)
-│   ├── REGISTROS/                 # Registros de armas (9 arquivos CSV)
-│   └── REQUERIMENTOS/             # Requerimentos de porte/registro (8 arquivos CSV)
+├── utils/                          # 🛠️ Utilitários compartilhados (E1-E7)
+│   ├── __init__.py
+│   └── tools_sinarm.py             # Tools SINARM (4 datasets)
 │
-├── logs/                          # Logs de execução do agente
-└── venv/                          # Ambiente virtual (criado pelo setup)
+├── DADOS_SINARM/                   # 📊 Dados reais (135k+ registros)
+│   ├── OCORRENCIAS/                # 74.758 registros
+│   ├── PORTES/                     # 2.328 registros
+│   ├── REGISTROS/                  # 12.798 registros
+│   └── REQUERIMENTOS/              # 46.116 registros
+│
+├── logs/                           # 📝 Logs centralizados
+│
+├── E1_ANATOMIA_DO_AGENTE/          # 🎯 Encontro 1 (BASELINE)
+│   ├── README_E1.md                # Guia completo E1
+│   ├── conceitos/                  # Conceitos modulares
+│   │   ├── 01_react_basico/
+│   │   ├── 02_tools/
+│   │   │   └── E1_tools_sinarm.py  # 4 tools SINARM
+│   │   └── 03_error_handling/
+│   ├── solucao_final/              # Versões integradas
+│   │   ├── E1_agente_react_v3.py
+│   │   └── agente_v1.8.py          # ⭐ Baseline E1 (60-70% accuracy)
+│   └── testes/
+│       └── TESTES_COMPLETOS.py
+│
+├── E2_QUALIDADE_E_MEMORIA/         # 🎯 Encontro 2 (QUALIDADE)
+│   ├── README_E2.md                # Guia completo E2
+│   ├── INDEX.md                    # Navegação rápida
+│   ├── conceitos/                  # 10 atividades práticas
+│   │   ├── 01_fewshot/             # Few-Shot Learning (4 atividades)
+│   │   │   ├── ATIVIDADE_1A_baseline.py
+│   │   │   ├── ATIVIDADE_1B_criar_exemplos.py
+│   │   │   ├── ATIVIDADE_1C_implementar.py
+│   │   │   ├── ATIVIDADE_1D_comparar.py
+│   │   │   └── EXPLICACAO.md       # Teoria completa
+│   │   ├── 02_cot/                 # Chain-of-Thought (4 atividades)
+│   │   │   ├── ATIVIDADE_2A_classificar.py
+│   │   │   ├── ATIVIDADE_2B_trace_manual.py
+│   │   │   ├── ATIVIDADE_2C_implementar.py
+│   │   │   ├── ATIVIDADE_2D_parser.py
+│   │   │   └── template_cot.txt
+│   │   ├── 03_memory_conversacional/  # Memory (1 atividade)
+│   │   │   └── ATIVIDADE_3A_buffer.py
+│   │   └── 04_security_basica/     # Security (2 atividades)
+│   │       ├── ATIVIDADE_4A_validation.py
+│   │       └── ATIVIDADE_4B_testar_ataque.py
+│   ├── solucao_final/
+│   │   ├── agente_v2.0_fewshot.py  # ⭐ Few-Shot (75-85% accuracy)
+│   │   ├── agente_v2.5_cot.py      # ⭐ CoT (80-90% accuracy)
+│   │   ├── COMPARACAO_V1_V2.py
+│   │   └── README_SOLUCAO.md
+│   └── demo_professor/
+│       ├── DEMO_AULA.py
+│       └── ROTEIRO_PROFESSOR.md
+│
+├── E3_LANGCHAIN_CREWAI/            # 🎯 Encontro 3 (futuro)
+├── E4_RAG_FAISS/                   # 🎯 Encontro 4 (futuro)
+├── E5_ESPECIALIZACAO/              # 🎯 Encontro 5 (futuro)
+├── E6_DEPLOY_GUARDRAILS/           # 🎯 Encontro 6 (futuro)
+├── E7_METRICAS_FINAL/              # 🎯 Encontro 7 (futuro)
+│
+└── agente_producao.py              # ⭐ VERSÃO FINAL (ao final disciplina)
 ```
 
 ---
 
-## Datasets SINARM
+## 🎯 Progressão da Disciplina
 
-O projeto trabalha com **4 tipos de datasets** reais do SINARM:
+### Evolução do Agente:
 
-### 1. OCORRÊNCIAS (74.758 registros)
-- **Arquivos**: `OCORRENCIAS_2024.csv`, `OCORRENCIAS_2025.csv`, `OCORRENCIAS_2026.csv`, `OCORRENCIAS_ate_2023.csv`
-- **Conteúdo**: Furtos, roubos, apreensões e recuperações de armas
-- **Colunas principais**: data, tipo_ocorrencia, uf, cidade, arma, calibre
-
-### 2. PORTES (2.328 registros)
-- **Arquivos**: `PORTES_2024.csv`, `PORTES_2025.csv`, `PORTES_2026.csv`, `PORTE_ate_2023.csv`
-- **Conteúdo**: Autorizações de porte de arma
-- **Colunas principais**: status, data_validade, uf, categoria
-
-### 3. REGISTROS (12.798 registros)
-- **Arquivos**: 9 arquivos CSV cobrindo período 1965-2026
-- **Conteúdo**: Registros de armas para defesa pessoal
-- **Colunas principais**: ano_registro, uf, categoria, arma, calibre
-
-### 4. REQUERIMENTOS (46.116 registros)
-- **Arquivos**: 8 arquivos CSV cobrindo período 2019-2026
-- **Conteúdo**: Solicitações de porte e registro
-- **Colunas principais**: data_requerimento, tipo, status, uf
-
----
-
-## Pré-requisitos
-
-### 1. Python 3.8+
-Verifique sua versão:
-```bash
-python --version
 ```
+E1: v1.8 (Baseline)
+  ├─ ReAct básico
+  ├─ 4 tools SINARM
+  ├─ Error handling
+  ├─ Accuracy: 60-70%
+  └─ Latência: ~2.3s
 
-### 2. Ollama Instalado
-O agente utiliza modelos locais via Ollama. Instale seguindo as instruções em:
-- **Site oficial**: https://ollama.ai
-- **Instalação Windows**: Baixe o instalador e execute
-- **Instalação Linux/Mac**: Use o comando oficial
+E2: v2.0 (Few-Shot)
+  ├─ v1.8 + Few-Shot Learning (3 exemplos)
+  ├─ Accuracy: 75-85% (+15pp)
+  └─ Latência: +10%
 
-Após instalar, baixe o modelo recomendado:
-```bash
-ollama pull llama3
-```
+E2: v2.5 (Few-Shot + CoT)
+  ├─ v2.0 + Chain-of-Thought
+  ├─ Accuracy: 80-90% (+5-10pp queries complexas)
+  ├─ Raciocínio explícito (debugging fácil)
+  └─ Latência: +30%
 
-### 3. Git (opcional, mas recomendado)
-Para clonar e versionar o código:
-```bash
-git --version
+E2: v2.5+ (Completo)
+  ├─ v2.5 + Memory conversacional
+  ├─ v2.5 + Security (input validation)
+  └─ Conversação multi-turno + Proteção ataques
+
+E3: v3.0 (LangChain)
+  └─ Refactoring com framework
+      (reduz 50% código, +10% performance)
+
+E4: v3.5 (RAG + FAISS)
+  └─ Vector DB + Retrieval
+      (busca semântica, histórico longo)
+
+E5-E7: v4.0+ (Produção)
+  └─ Especialização + Deploy + Métricas
+      (production-ready, escalável)
 ```
 
 ---
 
-## Instalação
+## 🚀 Quick Start
 
-### Opção 1: Instalação Automatizada (RECOMENDADO)
+### 1. Instalação Inicial
 
-Criamos scripts que configuram tudo automaticamente para você!
-
-#### Windows:
+**Windows:**
 ```bash
-# 1. Clone o repositório
-git clone https://github.com/yurilq/IBMEC_DESENVOLVIMENTO_AGENTE_2026.git
-cd IBMEC_DESENVOLVIMENTO_AGENTE_2026
-
-# 2. Execute o script de configuração
 setup.bat
 ```
 
-#### Linux/Mac:
+**Linux/Mac:**
 ```bash
-# 1. Clone o repositório
-git clone https://github.com/yurilq/IBMEC_DESENVOLVIMENTO_AGENTE_2026.git
-cd IBMEC_DESENVOLVIMENTO_AGENTE_2026
-
-# 2. Dê permissão de execução e execute
 chmod +x setup.sh
 ./setup.sh
 ```
 
-**O que o script faz:**
-- ✅ Verifica versão do Python (3.8+)
-- ✅ Cria ambiente virtual automaticamente
-- ✅ Instala todas as dependências
-- ✅ Verifica se Ollama está instalado
-- ✅ Valida a instalação completa
-
----
-
-### Opção 2: Instalação Manual
-
-Se preferir fazer passo a passo:
-
-#### Passo 1: Clone o repositório
+**Manual:**
 ```bash
-git clone https://github.com/yurilq/IBMEC_DESENVOLVIMENTO_AGENTE_2026.git
-cd IBMEC_DESENVOLVIMENTO_AGENTE_2026
-```
-
-#### Passo 2: Crie um ambiente virtual
-```bash
-# Windows
 python -m venv venv
-venv\Scripts\activate
-
-# Linux/Mac
-python3 -m venv venv
-source venv/bin/activate
-```
-
-#### Passo 3: Instale as dependências
-```bash
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
 pip install -r requirements.txt
 ```
 
-#### Passo 4: Verifique a instalação
+### 2. Verificar Instalação
 ```bash
 python verify_setup.py
 ```
 
+### 3. Configurar AWS (para Bedrock)
+```bash
+aws configure
+# Ou exportar:
+export AWS_ACCESS_KEY_ID="..."
+export AWS_SECRET_ACCESS_KEY="..."
+export AWS_DEFAULT_REGION="us-east-1"
+```
+
+### 4. Executar Agente
+
+**E1 (Baseline):**
+```bash
+cd E1_ANATOMIA_DO_AGENTE/solucao_final
+python agente_v1.8.py
+```
+
+**E2 (Few-Shot):**
+```bash
+cd E2_QUALIDADE_E_MEMORIA/solucao_final
+python agente_v2.0_fewshot.py
+```
+
+**E2 (CoT):**
+```bash
+cd E2_QUALIDADE_E_MEMORIA/solucao_final
+python agente_v2.5_cot.py
+```
+
 ---
 
-## Como Usar
+## 📚 Guias por Encontro
 
-### 1. Execute o Agente Principal
+### 📘 E1: Anatomia do Agente
+**Objetivo**: Construir agente ReAct do zero  
+**Duração**: 5 horas  
+**Guia completo**: [E1_ANATOMIA_DO_AGENTE/README_E1.md](E1_ANATOMIA_DO_AGENTE/README_E1.md)
+
+**Conceitos:**
+- ReAct Pattern (Thought → Action → Observation)
+- Tools SINARM (4 datasets, 135k+ registros)
+- Error handling (retry, fallback, validation)
+- LLM Integration (Bedrock + Claude)
+
+**Output**: Agente v1.8 (baseline 60-70% accuracy)
+
+---
+
+### 📗 E2: Qualidade e Memória
+**Objetivo**: Melhorar accuracy e adicionar contexto  
+**Duração**: 5 horas  
+**Guia completo**: [E2_QUALIDADE_E_MEMORIA/README_E2.md](E2_QUALIDADE_E_MEMORIA/README_E2.md)  
+**Navegação rápida**: [E2_QUALIDADE_E_MEMORIA/INDEX.md](E2_QUALIDADE_E_MEMORIA/INDEX.md)
+
+**Conceitos:**
+- Few-Shot Learning (4 atividades, +15-30% accuracy)
+- Chain-of-Thought (4 atividades, raciocínio explícito)
+- Memory Conversacional (1 atividade, buffer 5 mensagens)
+- Security Basics (2 atividades, input validation)
+
+**Output**: Agente v2.5 (80-90% accuracy, conversacional, protegido)
+
+---
+
+### 📙 E3-E7: Em Desenvolvimento
+Materiais serão adicionados progressivamente ao longo da disciplina.
+
+---
+
+## 🛠️ Utilitários Compartilhados
+
+### utils/tools_sinarm.py
+**Tools disponíveis em TODOS os encontros:**
+
+```python
+from utils.tools_sinarm import (
+    buscar_ocorrencias,   # Furtos, apreensões (74k registros)
+    buscar_portes,        # Portes válidos (2k registros)
+    buscar_registros,     # Registros armas (12k registros)
+    buscar_requerimentos  # Requerimentos (46k registros)
+)
+```
+
+**Características:**
+- ✅ Cache LRU (performance)
+- ✅ Validação SQL injection
+- ✅ Conformidade LGPD (remove "idade")
+- ✅ Logging auditável
+- ✅ Mapeamento inteligente de colunas
+
+**Formato de query:**
+```python
+# Padrão: "campo:valor"
+buscar_ocorrencias("marca:Taurus")
+buscar_portes("status:Válido")
+buscar_registros("calibre:9mm")
+buscar_requerimentos("decisao:Aprovado")
+```
+
+---
+
+## 📊 Datasets SINARM
+
+### Visão Geral:
+
+| Dataset | Registros | Descrição | Pasta |
+|---------|-----------|-----------|-------|
+| **OCORRENCIAS** | 74.758 | Furtos, apreensões, recuperações | `DADOS_SINARM/OCORRENCIAS/` |
+| **PORTES** | 2.328 | Portes válidos/vencidos | `DADOS_SINARM/PORTES/` |
+| **REGISTROS** | 12.798 | Registros de armas (defesa pessoal) | `DADOS_SINARM/REGISTROS/` |
+| **REQUERIMENTOS** | 46.116 | Requerimentos aprovados/negados | `DADOS_SINARM/REQUERIMENTOS/` |
+| **TOTAL** | **135.900** | - | - |
+
+### Colunas Principais:
+
+**OCORRENCIAS:**
+- marca_arma, especie_arma, calibre_arma
+- tipo_ocorrencia (Furto, Apreensão, Recuperação)
+- uf, municipio, ano_ocorrencia, mes_ocorrencia
+
+**PORTES:**
+- status_porte (Válido, Vencido)
+- marca_arma, especie_arma, calibre_arma
+- uf, municipio, ano_emissao
+
+**REGISTROS:**
+- status_registro (Ativo, Cancelado)
+- marca_arma, especie_arma, calibre_arma
+- categoria (CAC, Defesa)
+- uf, municipio
+
+**REQUERIMENTOS:**
+- tipo_requerimento (Porte, Registro)
+- decisao (Aprovado, Negado, Aguardando)
+- categoria (CAC, Defesa)
+- uf, municipio
+
+---
+
+## 🧪 Testes
+
+### Executar Testes E1:
 ```bash
-python E1_agente_react_v3.py
-```
-
-### 2. Exemplos de Consultas
-
-O agente aceita perguntas em linguagem natural:
-
-**Exemplo 1 - Ocorrências por UF:**
-```
-Pergunta: Quantos furtos de arma ocorreram no Rio de Janeiro em 2024?
-```
-
-**Exemplo 2 - Análise de Portes:**
-```
-Pergunta: Quais estados têm mais portes de arma vigentes?
-```
-
-**Exemplo 3 - Investigação de Registros:**
-```
-Pergunta: Qual o calibre de arma mais registrado em São Paulo?
-```
-
-**Exemplo 4 - Análise Temporal:**
-```
-Pergunta: Houve aumento nos requerimentos de porte entre 2023 e 2024?
-```
-
-### 3. Execute os Testes
-```bash
+cd E1_ANATOMIA_DO_AGENTE/testes
 python TESTES_COMPLETOS.py
 ```
 
----
-
-## Arquitetura do Agente
-
-### Padrão ReAct Implementado
-
-O agente segue o ciclo **ReAct (Reason + Act)**:
-
+**Output esperado:**
 ```
-1. THOUGHT (Pensamento)
-   └─> Agente analisa a pergunta e decide qual ferramenta usar
-
-2. ACTION (Ação)
-   └─> Agente executa a ferramenta escolhida com os parâmetros corretos
-
-3. OBSERVATION (Observação)
-   └─> Agente recebe o resultado e decide se precisa de mais ações
-
-4. FINAL ANSWER (Resposta Final)
-   └─> Agente formula a resposta baseada nas observações
+=== TESTE TOOLS SINARM ===
+TEST 1: Busca Ocorrências ✅ 1.247 registros
+TEST 2: Busca Portes ✅ 1.856 registros
+TEST 3: Busca Registros ✅ 9.847 registros
+TEST 4: Busca Requerimentos ✅ 28.456 registros
+TEST 5: Proteção SQL Injection ✅ Rejeitado
 ```
 
-### Ferramentas Disponíveis
-
-O arquivo `E1_tools_sinarm.py` implementa 4 ferramentas principais:
-
-| Ferramenta | Descrição | Dataset |
-|------------|-----------|---------|
-| `buscar_ocorrencias()` | Busca furtos, roubos e apreensões | OCORRENCIAS |
-| `buscar_portes()` | Consulta portes de arma vigentes | PORTES |
-| `buscar_registros()` | Busca registros de armas | REGISTROS |
-| `buscar_requerimentos()` | Consulta requerimentos | REQUERIMENTOS |
-
-**Recursos das ferramentas:**
-- Cache LRU para performance
-- Validação rigorosa de input
-- Logging para auditoria
-- Tratamento de erros robusto
-- Output estruturado em JSON
-- Conformidade LGPD (sem dados pessoais sensíveis)
-
----
-
-## Logs e Debugging
-
-O agente gera logs detalhados em `logs/`:
-
-```
-logs/
-├── agente_YYYYMMDD_HHMMSS.log    # Log principal do agente
-└── tools_YYYYMMDD_HHMMSS.log     # Log das ferramentas
-```
-
-**Níveis de log:**
-- `INFO`: Operações normais
-- `DEBUG`: Detalhes técnicos
-- `WARNING`: Situações inesperadas (não críticas)
-- `ERROR`: Erros que afetam a execução
-
----
-
-## Scripts de Automação
-
-O repositório inclui scripts que automatizam a configuração do ambiente:
-
-### setup.bat (Windows)
-Script automatizado para Windows que:
-- Verifica versão do Python
-- Cria ambiente virtual
-- Instala dependências
-- Verifica instalação do Ollama
-- Valida toda a configuração
-
-**Uso:**
+### Executar Atividades E2:
 ```bash
-setup.bat
+cd E2_QUALIDADE_E_MEMORIA/conceitos/01_fewshot
+python ATIVIDADE_1A_baseline.py
+python ATIVIDADE_1B_criar_exemplos.py
+# ... continuar sequência
 ```
 
-### setup.sh (Linux/Mac)
-Script automatizado para Linux/Mac que faz o mesmo que o setup.bat.
+---
 
-**Uso:**
+## 📖 Documentação
+
+### Guias Principais:
+- [README.md](README.md) - Este arquivo (navegação geral)
+- [QUICK_START.md](QUICK_START.md) - Início rápido
+- [INSTRUCOES_ALUNOS.md](INSTRUCOES_ALUNOS.md) - Instruções detalhadas
+- [GUIA_GITHUB.md](GUIA_GITHUB.md) - Como usar Git/GitHub
+
+### Por Encontro:
+- [E1: README_E1.md](E1_ANATOMIA_DO_AGENTE/README_E1.md) - Guia completo E1
+- [E2: README_E2.md](E2_QUALIDADE_E_MEMORIA/README_E2.md) - Guia completo E2
+- [E2: INDEX.md](E2_QUALIDADE_E_MEMORIA/INDEX.md) - Navegação rápida E2
+
+### Conceitos Específicos:
+- [Few-Shot: EXPLICACAO.md](E2_QUALIDADE_E_MEMORIA/conceitos/01_fewshot/EXPLICACAO.md)
+- [CoT: template_cot.txt](E2_QUALIDADE_E_MEMORIA/conceitos/02_cot/template_cot.txt)
+
+---
+
+## 🆘 Troubleshooting
+
+### "ModuleNotFoundError: No module named 'langchain_aws'"
 ```bash
-chmod +x setup.sh
-./setup.sh
+pip install langchain-aws boto3
 ```
 
-### verify_setup.py
-Script Python que verifica se o ambiente está configurado corretamente:
-- Versão do Python
-- Dependências instaladas
-- Arquivos do projeto
-- Integridade dos datasets
-- Importação dos módulos
-
-**Uso:**
+### "NoCredentialsError: Unable to locate credentials"
 ```bash
-python verify_setup.py
+aws configure
 ```
 
----
-
-## Troubleshooting
-
-### Problema 1: Erros na instalação
-**Solução rápida:**
+### "FileNotFoundError: OCORRENCIAS_2026.csv not found"
 ```bash
-# Windows
-setup.bat
-
-# Linux/Mac
-./setup.sh
+# Verificar que DADOS_SINARM/ está no local correto
+# Ajustar caminho em utils/tools_sinarm.py se necessário
 ```
 
-Os scripts automatizados resolvem 90% dos problemas de instalação!
-
-### Problema 2: Ollama não encontrado
-```
-Erro: Ollama model not found
-```
-**Solução:**
-1. Verifique se o Ollama está instalado: `ollama --version`
-2. Baixe o modelo: `ollama pull llama3`
-3. Verifique se o serviço está rodando
-
-### Problema 3: Erro de encoding (Windows)
-```
-Erro: UnicodeEncodeError
-```
-**Solução:**
-O código já trata encoding UTF-8, mas se persistir:
+### "ImportError: cannot import name 'buscar_ocorrencias'"
 ```bash
-set PYTHONIOENCODING=utf-8
-python E1_agente_react_v3.py
+# Adicionar ao path:
+import sys
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(BASE_DIR))
+from utils.tools_sinarm import buscar_ocorrencias
 ```
 
-### Problema 4: Arquivos CSV não encontrados
-```
-Erro: FileNotFoundError: [Errno 2] No such file or directory
-```
-**Solução:**
-Verifique se a pasta `DADOS_SINARM/` está no mesmo diretório dos scripts Python.
-
-### Problema 5: Dependências não instaladas
-```
-Erro: ModuleNotFoundError: No module named 'langchain'
-```
-**Solução:**
+### "Agente muito lento"
 ```bash
-# Instalação manual
-pip install -r requirements.txt
-
-# Ou use o script automatizado
-setup.bat  # Windows
-./setup.sh # Linux/Mac
+# 1. Verificar cache ativo
+# 2. Reduzir max_tokens (padrão: 4096 → 2048)
+# 3. Usar temperature=0.0 (determinístico)
 ```
 
-### Problema 6: Versão do Python incompatível
-**Solução:**
-Execute `python verify_setup.py` para verificar sua versão.
+---
 
-**Versão mínima:** Python 3.8  
-**Versão recomendada:** Python 3.10+
+## 🤝 Contribuindo
 
-Se sua versão for antiga, atualize em: https://www.python.org/downloads/
+### Reportar Bugs:
+- Abra issue no repositório
+- Descreva: ambiente, erro, passos para reproduzir
+
+### Sugerir Melhorias:
+- Fork → Branch → Commit → Pull Request
+- Seguir padrões de código existentes
 
 ---
 
-## Recursos de Aprendizado
+## 📞 Suporte
 
-### Para os Alunos
+### Canais:
+- **Fórum da disciplina** (principal)
+- **Issues GitHub** (bugs/melhorias)
+- **Email professor** (dúvidas urgentes)
+- **Monitoria** (horários fixos)
 
-Este projeto foi desenvolvido com propósito educacional. Recomendamos:
-
-1. **Leia o código comentado**: Todos os scripts têm comentários detalhados
-2. **Execute passo a passo**: Use breakpoints para entender o fluxo
-3. **Modifique e experimente**: Crie novas ferramentas e consultas
-4. **Analise os logs**: Entenda como o agente toma decisões
-
-### Conceitos Abordados
-
-- **LangChain**: Framework para desenvolvimento de agentes LLM
-- **Ollama**: Execução local de modelos de linguagem
-- **ReAct Pattern**: Padrão de raciocínio e ação
-- **Tool Calling**: Chamada de funções externas pelo agente
-- **Data Analysis**: Análise de dados reais com Pandas
-- **Logging e Debugging**: Boas práticas de desenvolvimento
-- **LGPD**: Conformidade com lei de proteção de dados
+### FAQ:
+Consulte os README específicos:
+- [E1 FAQ](E1_ANATOMIA_DO_AGENTE/README_E1.md#-troubleshooting)
+- [E2 FAQ](E2_QUALIDADE_E_MEMORIA/README_E2.md#-faq)
 
 ---
 
-## Próximos Passos
+## 📜 Licença
 
-Este é o código do **Encontro 1 (E1)**. Nos próximos encontros, você irá:
-
-- **E2**: Adicionar memória e contexto ao agente
-- **E3**: Implementar RAG (Retrieval-Augmented Generation)
-- **E4**: Criar interface web para o agente
-- **E5**: Deploy e produção do agente
-- **E6**: Multi-agentes e orquestração
-- **E7**: Projeto final integrado
+Uso educacional - MBA em Inteligência Artificial.  
+Material desenvolvido para disciplina "Desenvolvimento de Agentes".
 
 ---
 
-## Contribuindo
+## ✅ Checklist Geral
 
-Este é um projeto educacional. Se você é aluno e encontrou melhorias:
+### Setup Inicial:
+- [ ] Python 3.8+ instalado
+- [ ] Dependências instaladas (`pip install -r requirements.txt`)
+- [ ] AWS credentials configuradas
+- [ ] Setup verificado (`python verify_setup.py`)
 
-1. Faça um fork do repositório
-2. Crie uma branch para sua feature: `git checkout -b feature/minha-melhoria`
-3. Commit suas mudanças: `git commit -m 'Adiciona melhoria X'`
-4. Push para a branch: `git push origin feature/minha-melhoria`
-5. Abra um Pull Request
+### E1 Completo:
+- [ ] Executei agente v1.8
+- [ ] Testei 4 tools SINARM
+- [ ] Entendi ciclo ReAct
+- [ ] Medi baseline (60-70% accuracy)
 
----
-
-## Licença
-
-Este projeto é de uso educacional para o curso de MBA em Desenvolvimento de Agentes.
-
----
-
-## Contato e Suporte
-
-- **Dúvidas técnicas**: Abra uma issue no GitHub
-- **Discussões**: Use a aba Discussions do repositório
-- **Professor responsável**: [Adicionar informações de contato]
+### E2 Completo:
+- [ ] Completei 10 atividades (1A-4B)
+- [ ] Implementei Few-Shot (+15-30% accuracy)
+- [ ] Implementei CoT (raciocínio explícito)
+- [ ] Adicionei Memory (conversação)
+- [ ] Protegi com Security (validation)
 
 ---
 
-## Changelog
+**Última atualização**: 2026-07-15  
+**Versão**: 2.0 (estrutura modular organizada)  
 
-### v3.0 (Atual)
-- Implementação do padrão ReAct manual
-- 4 ferramentas SINARM funcionais
-- Suporte completo a Ollama
-- Logging e debugging melhorados
-- Suite de testes automatizados
-
-### v1.8 (Anterior)
-- Versão inicial com create_agent()
-- Limitações com Ollama
-
----
-
-**Desenvolvido para o curso de MBA - Disciplina: Desenvolvimento de Agentes**
-
-**Encontro 1: Anatomia do Agente**
+🚀 **Boa jornada no desenvolvimento de agentes!**

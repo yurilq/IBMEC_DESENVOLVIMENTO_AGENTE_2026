@@ -39,8 +39,9 @@ if sys.version_info >= (3, 7):
         sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 # Setup paths
-# project_root = Path(__file__).resolve().parents[2]  # ERRADO: sobe 2 níveis demais
-project_root = Path(__file__).resolve().parent  # CORRETO: 03_CODIGOS_PRONTOS
+# Nova estrutura: E1_ANATOMIA_DO_AGENTE/solucao_final/agente_v1.8.py
+# Precisa voltar 2 níveis para chegar em 03_CODIGOS_PRONTOS
+project_root = Path(__file__).resolve().parent.parent.parent  # 03_CODIGOS_PRONTOS
 sys.path.insert(0, str(project_root))
 
 # Criar pasta de logs se não existir
@@ -58,9 +59,9 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Importar Tools
+# Importar Tools (agora de utils/)
 try:
-    from E1_tools_sinarm import (
+    from utils.tools_sinarm import (
         buscar_ocorrencias,
         buscar_registros,
         buscar_portes,

@@ -32,14 +32,14 @@ if sys.version_info >= (3, 7):
         sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 # Setup paths
-# project_root = Path(__file__).resolve().parents[2]  # ERRADO: sobe 2 níveis demais
-project_root = Path(__file__).resolve().parent  # CORRETO: 03_CODIGOS_PRONTOS
+# Nova estrutura: E1_ANATOMIA_DO_AGENTE/solucao_final/E1_agente_react_v3.py
+project_root = Path(__file__).resolve().parent.parent.parent  # 03_CODIGOS_PRONTOS
 sys.path.insert(0, str(project_root))
 
 from langchain_ollama import OllamaLLM
 
 try:
-    from E1_tools_sinarm import (
+    from utils.tools_sinarm import (
         buscar_ocorrencias,
         buscar_registros,
         buscar_portes,
