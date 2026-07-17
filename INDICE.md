@@ -16,15 +16,15 @@
 
 ## 📚 ENCONTROS (AULAS)
 
-| Encontro | Data | Pasta | Status |
-|----------|------|-------|--------|
-| **E1** - Anatomia do Agente | 14-16/07 | `E1_ANATOMIA_DO_AGENTE/` | ✅ |
-| **E2** - Qualidade & Memória | 21-23/07 | `E2_QUALIDADE_E_MEMORIA/` | ✅ |
-| **E3** - LangChain vs CrewAI | 28-30/07 | `E3_HANDS_ON_CONSTRUCAO_ZERO/` | 🔄 |
-| **E4** - RAG + FAISS | 04-06/08 | _(em breve)_ | ⏳ |
-| **E5** - Especialização PDFs | 11-13/08 | _(em breve)_ | ⏳ |
-| **E6** - Deploy + Guardrails | 18-20/08 | _(em breve)_ | ⏳ |
-| **E7** - Métricas + Final | 25-27/08 | _(em breve)_ | ⏳ |
+| Encontro | Pasta | Status |
+|----------|-------|--------|
+| **E1** - Anatomia do Agente | `E1_ANATOMIA_DO_AGENTE/` | ✅ Pronto |
+| **E2** - Qualidade & Memória | `E2_QUALIDADE_E_MEMORIA/` | ✅ Pronto |
+| **E3** - LangChain vs CrewAI | `E3_HANDS_ON_CONSTRUCAO_ZERO/` | 🔄 Em preparação |
+| **E4** - RAG + FAISS | _(em breve)_ | ⏳ Planejado |
+| **E5** - Especialização PDFs | _(em breve)_ | ⏳ Planejado |
+| **E6** - Deploy + Guardrails | _(em breve)_ | ⏳ Planejado |
+| **E7** - Métricas + Final | _(em breve)_ | ⏳ Planejado |
 
 ---
 
