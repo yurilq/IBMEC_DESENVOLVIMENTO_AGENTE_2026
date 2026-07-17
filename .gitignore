@@ -207,6 +207,48 @@ Icon
 dados_pessoais/
 dados_teste/
 
+# ========== ARQUIVOS DE PROFESSOR (NÃO COMPARTILHAR COM ALUNOS) ==========
+
+# Pasta interna completa
+_INTERNO/
+
+# Pastas internas dos encontros
+E1_ANATOMIA_DO_AGENTE/_INTERNO_PROFESSOR/
+E2_QUALIDADE_E_MEMORIA/_INTERNO_PROFESSOR/
+E3_HANDS_ON_CONSTRUCAO_ZERO/_INTERNO_PROFESSOR/
+
+# Arquivos de planejamento/roteiro do professor
+*ROTEIRO_PROFESSOR*
+*ROTEIRO_TERCA*
+*ROTEIRO_QUINTA*
+*PLANEJAMENTO_PROFESSOR*
+*GABARITO*
+*SOLUCAO_PROFESSOR*
+
+# Relatórios e análises internas
+*RELATORIO_TESTES*
+*CONCLUSAO_ESTRUTURACAO*
+*CONFIRMACAO_FINAL*
+*RESUMO_ESTRUTURACAO*
+*SCRIPTS_AUTOMATIZADOS_RESUMO*
+
+# Versões antigas (backup professor)
+_versoes_antigas/
+versoes_antigas/
+backup/
+
+# Scripts de teste do professor
+TESTAR_*.py
+VALIDACAO_*.py
+VERIFICAR_PRIVACIDADE.py
+RELATORIO_VALIDACAO.md
+CONFIGURACAO_PRIVACIDADE.md
+
+# Notas e anotações do professor
+NOTAS_PROFESSOR*
+ANOTACOES*
+TODO_PROFESSOR*
+
 # ========== OUTROS ==========
 
 # Node (caso adicione frontend no futuro)

@@ -1,443 +1,306 @@
-# 🎓 Desenvolvimento de Agentes - Códigos Prontos
+# 🎓 CÓDIGOS AULA - MBA IA GENERATIVA
 
-## 📋 Visão Geral
-
-Este repositório contém **todo o código prático** da disciplina **Desenvolvimento de Agentes** do MBA em IA.
-
-**Estrutura**: Organizado por **encontros** (E1, E2, E3...), cada um com **conceitos modulares** + **solução final integrada**.
+**Repositório de Códigos Práticos**  
+**Disciplina**: Desenvolvimento de Agentes Conversacionais  
+**Instituição**: IBMEC + PCDF
 
 ---
 
-## 📂 Estrutura Organizada
+## 🚀 COMECE AQUI (3 PASSOS)
+
+### 1️⃣ Clone ou Baixe
+```bash
+git clone [URL_REPOSITORIO]
+cd CODIGOS_AULA
+```
+
+### 2️⃣ Configure o Ambiente
+```bash
+# Windows
+_SETUP\setup.bat
+
+# Linux/Mac
+bash _SETUP/setup.sh
+```
+
+### 3️⃣ Verifique a Instalação
+```bash
+python _SETUP/verify_setup.py
+```
+
+✅ **Pronto! Agora pode começar.**
+
+---
+
+## 📂 ESTRUTURA (Organizada e Clara)
 
 ```
-03_CODIGOS_PRONTOS/
+CODIGOS_AULA/
 │
-├── README.md                       # Este arquivo (navegação principal)
-├── requirements.txt                # Dependências Python (todas)
-├── .gitignore
-├── setup.bat                       # Setup Windows
-├── setup.sh                        # Setup Linux/Mac
-├── verify_setup.py                 # Verificar instalação
+├── 📘 README.md                   ← Você está aqui
+├── 🚀 QUICK_START.md              ← Setup rápido (1 página)
+├── 📦 requirements.txt            ← Dependências Python
 │
-├── utils/                          # 🛠️ Utilitários compartilhados (E1-E7)
-│   ├── __init__.py
-│   └── tools_sinarm.py             # Tools SINARM (4 datasets)
+├── 🎯 E1_ANATOMIA_DO_AGENTE/      ← Encontro 1 (Tools + ReAct)
+├── 🎯 E2_QUALIDADE_E_MEMORIA/     ← Encontro 2 (Few-shot + CoT)
+├── 🎯 E3_HANDS_ON_CONSTRUCAO_ZERO/← Encontro 3 (LangChain vs CrewAI)
 │
-├── DADOS_SINARM/                   # 📊 Dados reais (135k+ registros)
-│   ├── OCORRENCIAS/                # 74.758 registros
-│   ├── PORTES/                     # 2.328 registros
-│   ├── REGISTROS/                  # 12.798 registros
-│   └── REQUERIMENTOS/              # 46.116 registros
+├── 📊 DADOS_SINARM/               ← Datasets reais PCDF
+│   ├── OCORRENCIAS_2026.csv       (74.758 registros)
+│   ├── PORTES_2026.csv
+│   ├── REGISTROS_2026.csv
+│   └── REQUERIMENTOS_2026.csv
 │
-├── logs/                           # 📝 Logs centralizados
+├── 🛠️ utils/                      ← Ferramentas compartilhadas
+│   └── tools_sinarm.py            (4 tools prontas)
 │
-├── E1_ANATOMIA_DO_AGENTE/          # 🎯 Encontro 1 (BASELINE)
-│   ├── README_E1.md                # Guia completo E1
-│   ├── conceitos/                  # Conceitos modulares
-│   │   ├── 01_react_basico/
-│   │   ├── 02_tools/
-│   │   │   └── E1_tools_sinarm.py  # 4 tools SINARM
-│   │   └── 03_error_handling/
-│   ├── solucao_final/              # Versões integradas
-│   │   ├── E1_agente_react_v3.py
-│   │   └── agente_v1.8.py          # ⭐ Baseline E1 (60-70% accuracy)
-│   └── testes/
-│       └── TESTES_COMPLETOS.py
+├── 📚 _DOCUMENTACAO/              ← Guias e instruções
+│   ├── GUIA_GITHUB.md
+│   ├── GUIA_INSTALACAO.md
+│   ├── INSTRUCOES_ALUNOS.md
+│   ├── TROUBLESHOOTING.md
+│   └── ...
 │
-├── E2_QUALIDADE_E_MEMORIA/         # 🎯 Encontro 2 (QUALIDADE)
-│   ├── README_E2.md                # Guia completo E2
-│   ├── INDEX.md                    # Navegação rápida
-│   ├── conceitos/                  # 10 atividades práticas
-│   │   ├── 01_fewshot/             # Few-Shot Learning (4 atividades)
-│   │   │   ├── ATIVIDADE_1A_baseline.py
-│   │   │   ├── ATIVIDADE_1B_criar_exemplos.py
-│   │   │   ├── ATIVIDADE_1C_implementar.py
-│   │   │   ├── ATIVIDADE_1D_comparar.py
-│   │   │   └── EXPLICACAO.md       # Teoria completa
-│   │   ├── 02_cot/                 # Chain-of-Thought (4 atividades)
-│   │   │   ├── ATIVIDADE_2A_classificar.py
-│   │   │   ├── ATIVIDADE_2B_trace_manual.py
-│   │   │   ├── ATIVIDADE_2C_implementar.py
-│   │   │   ├── ATIVIDADE_2D_parser.py
-│   │   │   └── template_cot.txt
-│   │   ├── 03_memory_conversacional/  # Memory (1 atividade)
-│   │   │   └── ATIVIDADE_3A_buffer.py
-│   │   └── 04_security_basica/     # Security (2 atividades)
-│   │       ├── ATIVIDADE_4A_validation.py
-│   │       └── ATIVIDADE_4B_testar_ataque.py
-│   ├── solucao_final/
-│   │   ├── agente_v2.0_fewshot.py  # ⭐ Few-Shot (75-85% accuracy)
-│   │   ├── agente_v2.5_cot.py      # ⭐ CoT (80-90% accuracy)
-│   │   ├── COMPARACAO_V1_V2.py
-│   │   └── README_SOLUCAO.md
-│   └── demo_professor/
-│       ├── DEMO_AULA.py
-│       └── ROTEIRO_PROFESSOR.md
+├── ⚙️ _SETUP/                     ← Scripts de instalação
+│   ├── setup.bat                  (Windows)
+│   ├── setup.sh                   (Linux/Mac)
+│   ├── verify_setup.py            (Testar ambiente)
+│   └── teste_imports.py
 │
-├── E3_LANGCHAIN_CREWAI/            # 🎯 Encontro 3 (futuro)
-├── E4_RAG_FAISS/                   # 🎯 Encontro 4 (futuro)
-├── E5_ESPECIALIZACAO/              # 🎯 Encontro 5 (futuro)
-├── E6_DEPLOY_GUARDRAILS/           # 🎯 Encontro 6 (futuro)
-├── E7_METRICAS_FINAL/              # 🎯 Encontro 7 (futuro)
-│
-└── agente_producao.py              # ⭐ VERSÃO FINAL (ao final disciplina)
+└── 📁 _INTERNO/                   ← Arquivos internos (professor)
+    └── ... (versões antigas, relatórios)
 ```
 
 ---
 
-## 🎯 Progressão da Disciplina
+## 🎯 ENCONTROS (E1 → E7)
 
-### Evolução do Agente:
+| # | Encontro | Tópico | Status | Código |
+|---|----------|--------|--------|--------|
+| **E1** | 14-16/07 | Anatomia do Agente | ✅ Pronto | `E1_ANATOMIA_DO_AGENTE/` |
+| **E2** | 21-23/07 | Qualidade & Memória | ✅ Pronto | `E2_QUALIDADE_E_MEMORIA/` |
+| **E3** | 28-30/07 | LangChain vs CrewAI | 🔄 Em prep. | `E3_HANDS_ON_CONSTRUCAO_ZERO/` |
+| **E4** | 04-06/08 | RAG + FAISS | ⏳ | - |
+| **E5** | 11-13/08 | Especialização PDFs | ⏳ | - |
+| **E6** | 18-20/08 | Deploy + Guardrails | ⏳ | - |
+| **E7** | 25-27/08 | Métricas + Final | ⏳ | - |
 
+---
+
+## 📖 GUIAS RÁPIDOS
+
+### Para Alunos
+
+| Preciso de... | Arquivo |
+|---------------|---------|
+| Setup rápido (5 min) | `QUICK_START.md` |
+| Instruções completas | `_DOCUMENTACAO/INSTRUCOES_ALUNOS.md` |
+| Problemas? | `_DOCUMENTACAO/TROUBLESHOOTING.md` |
+| Como usar Git? | `_DOCUMENTACAO/GUIA_GITHUB.md` |
+
+### Para Professores
+
+| Preciso de... | Localização |
+|---------------|-------------|
+| Relatórios internos | `_INTERNO/` |
+| Versões antigas | `_INTERNO/_versoes_antigas/` |
+
+---
+
+## 💻 REQUISITOS
+
+### Python
+- Python 3.10+
+- pip atualizado
+
+### Bibliotecas Principais
 ```
-E1: v1.8 (Baseline)
-  ├─ ReAct básico
-  ├─ 4 tools SINARM
-  ├─ Error handling
-  ├─ Accuracy: 60-70%
-  └─ Latência: ~2.3s
+langchain
+openai
+python-dotenv
+pandas
+faiss-cpu
+```
 
-E2: v2.0 (Few-Shot)
-  ├─ v1.8 + Few-Shot Learning (3 exemplos)
-  ├─ Accuracy: 75-85% (+15pp)
-  └─ Latência: +10%
+Tudo em: `requirements.txt`
 
-E2: v2.5 (Few-Shot + CoT)
-  ├─ v2.0 + Chain-of-Thought
-  ├─ Accuracy: 80-90% (+5-10pp queries complexas)
-  ├─ Raciocínio explícito (debugging fácil)
-  └─ Latência: +30%
+---
 
-E2: v2.5+ (Completo)
-  ├─ v2.5 + Memory conversacional
-  ├─ v2.5 + Security (input validation)
-  └─ Conversação multi-turno + Proteção ataques
+## 🔧 INSTALAÇÃO DETALHADA
 
-E3: v3.0 (LangChain)
-  └─ Refactoring com framework
-      (reduz 50% código, +10% performance)
+### Windows
+1. Abrir terminal na pasta `CODIGOS_AULA`
+2. Executar:
+   ```cmd
+   _SETUP\setup.bat
+   ```
+3. Verificar:
+   ```cmd
+   python _SETUP\verify_setup.py
+   ```
 
-E4: v3.5 (RAG + FAISS)
-  └─ Vector DB + Retrieval
-      (busca semântica, histórico longo)
+### Linux/Mac
+1. Abrir terminal na pasta `CODIGOS_AULA`
+2. Executar:
+   ```bash
+   bash _SETUP/setup.sh
+   ```
+3. Verificar:
+   ```bash
+   python3 _SETUP/verify_setup.py
+   ```
 
-E5-E7: v4.0+ (Produção)
-  └─ Especialização + Deploy + Métricas
-      (production-ready, escalável)
+---
+
+## 📊 DADOS SINARM
+
+### Datasets Disponíveis
+
+| Dataset | Registros | Arquivo |
+|---------|-----------|---------|
+| Ocorrências | 74.758 | `DADOS_SINARM/OCORRENCIAS_2026.csv` |
+| Portes de Arma | 2.328 | `DADOS_SINARM/PORTES_2026.csv` |
+| Registros de Arma | 12.798 | `DADOS_SINARM/REGISTROS_2026.csv` |
+| Requerimentos | 46.116 | `DADOS_SINARM/REQUERIMENTOS_2026.csv` |
+
+**Total**: 135.000+ registros reais
+
+---
+
+## 🛠️ FERRAMENTAS PRONTAS
+
+### `utils/tools_sinarm.py`
+
+4 tools profissionais prontas para usar:
+
+1. **buscar_ocorrencias_por_tipo** - Busca por tipo de crime
+2. **buscar_ocorrencias_por_regiao** - Busca por região
+3. **buscar_portes_por_status** - Status de portes
+4. **buscar_registros_por_calibre** - Registros por calibre
+
+**Uso**:
+```python
+from utils.tools_sinarm import buscar_ocorrencias_por_tipo
+
+resultado = buscar_ocorrencias_por_tipo("FURTO")
+print(resultado)
 ```
 
 ---
 
-## 🚀 Quick Start
+## 🎯 COMO USAR POR ENCONTRO
 
-### 1. Instalação Inicial
-
-**Windows:**
+### E1 - Anatomia do Agente
 ```bash
-setup.bat
+cd E1_ANATOMIA_DO_AGENTE
+python solucao_final/agente_v1.8.py
 ```
 
-**Linux/Mac:**
+### E2 - Qualidade & Memória
 ```bash
-chmod +x setup.sh
-./setup.sh
+cd E2_QUALIDADE_E_MEMORIA
+python solucao_final/agente_v2.0.py
 ```
 
-**Manual:**
+### E3 - LangChain vs CrewAI
 ```bash
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-venv\Scripts\activate     # Windows
+cd E3_HANDS_ON_CONSTRUCAO_ZERO
+# (em desenvolvimento)
+```
+
+---
+
+## 📝 LOGS
+
+Todos os logs são salvos em:
+```
+logs/agente_YYYYMMDD_HHMMSS.log
+```
+
+Para ver logs em tempo real:
+```bash
+# Windows
+type logs\agente_*.log
+
+# Linux/Mac
+cat logs/agente_*.log
+```
+
+---
+
+## 🔒 VARIÁVEIS DE AMBIENTE
+
+Crie um arquivo `.env` na raiz:
+
+```bash
+OPENAI_API_KEY=sua_chave_aqui
+OPENAI_MODEL=gpt-4o-mini
+TEMPERATURE=0.0
+MAX_TOKENS=2000
+```
+
+---
+
+## 🆘 PROBLEMAS COMUNS
+
+### ImportError: No module named 'X'
+```bash
 pip install -r requirements.txt
 ```
 
-### 2. Verificar Instalação
-```bash
-python verify_setup.py
-```
+### Erro de API Key
+Verifique se `.env` existe e tem `OPENAI_API_KEY`
 
-### 3. Configurar AWS (para Bedrock)
-```bash
-aws configure
-# Ou exportar:
-export AWS_ACCESS_KEY_ID="..."
-export AWS_SECRET_ACCESS_KEY="..."
-export AWS_DEFAULT_REGION="us-east-1"
-```
+### Dados não encontrados
+Verifique se está na pasta `CODIGOS_AULA/` ao executar
 
-### 4. Executar Agente
-
-**E1 (Baseline):**
-```bash
-cd E1_ANATOMIA_DO_AGENTE/solucao_final
-python agente_v1.8.py
-```
-
-**E2 (Few-Shot):**
-```bash
-cd E2_QUALIDADE_E_MEMORIA/solucao_final
-python agente_v2.0_fewshot.py
-```
-
-**E2 (CoT):**
-```bash
-cd E2_QUALIDADE_E_MEMORIA/solucao_final
-python agente_v2.5_cot.py
-```
+**Mais ajuda**: `_DOCUMENTACAO/TROUBLESHOOTING.md`
 
 ---
 
-## 📚 Guias por Encontro
+## 🤝 CONTRIBUINDO
 
-### 📘 E1: Anatomia do Agente
-**Objetivo**: Construir agente ReAct do zero  
-**Duração**: 5 horas  
-**Guia completo**: [E1_ANATOMIA_DO_AGENTE/README_E1.md](E1_ANATOMIA_DO_AGENTE/README_E1.md)
-
-**Conceitos:**
-- ReAct Pattern (Thought → Action → Observation)
-- Tools SINARM (4 datasets, 135k+ registros)
-- Error handling (retry, fallback, validation)
-- LLM Integration (Bedrock + Claude)
-
-**Output**: Agente v1.8 (baseline 60-70% accuracy)
+Este é um repositório educacional. Para sugestões:
+1. Crie uma issue
+2. Ou fale com o professor
 
 ---
 
-### 📗 E2: Qualidade e Memória
-**Objetivo**: Melhorar accuracy e adicionar contexto  
-**Duração**: 5 horas  
-**Guia completo**: [E2_QUALIDADE_E_MEMORIA/README_E2.md](E2_QUALIDADE_E_MEMORIA/README_E2.md)  
-**Navegação rápida**: [E2_QUALIDADE_E_MEMORIA/INDEX.md](E2_QUALIDADE_E_MEMORIA/INDEX.md)
+## 📞 SUPORTE
 
-**Conceitos:**
-- Few-Shot Learning (4 atividades, +15-30% accuracy)
-- Chain-of-Thought (4 atividades, raciocínio explícito)
-- Memory Conversacional (1 atividade, buffer 5 mensagens)
-- Security Basics (2 atividades, input validation)
+### Documentação
+- `QUICK_START.md` - Setup rápido
+- `_DOCUMENTACAO/` - Guias completos
+- `_SETUP/verify_setup.py` - Teste de ambiente
 
-**Output**: Agente v2.5 (80-90% accuracy, conversacional, protegido)
+### Professor
+- Durante as aulas
+- Ou via email institucional
 
 ---
 
-### 📙 E3-E7: Em Desenvolvimento
-Materiais serão adicionados progressivamente ao longo da disciplina.
+## 📜 LICENÇA
+
+Material educacional - MBA IBMEC/PCDF  
+Uso restrito a alunos da disciplina
 
 ---
 
-## 🛠️ Utilitários Compartilhados
+## ✅ CHECKLIST DE INÍCIO
 
-### utils/tools_sinarm.py
-**Tools disponíveis em TODOS os encontros:**
-
-```python
-from utils.tools_sinarm import (
-    buscar_ocorrencias,   # Furtos, apreensões (74k registros)
-    buscar_portes,        # Portes válidos (2k registros)
-    buscar_registros,     # Registros armas (12k registros)
-    buscar_requerimentos  # Requerimentos (46k registros)
-)
-```
-
-**Características:**
-- ✅ Cache LRU (performance)
-- ✅ Validação SQL injection
-- ✅ Conformidade LGPD (remove "idade")
-- ✅ Logging auditável
-- ✅ Mapeamento inteligente de colunas
-
-**Formato de query:**
-```python
-# Padrão: "campo:valor"
-buscar_ocorrencias("marca:Taurus")
-buscar_portes("status:Válido")
-buscar_registros("calibre:9mm")
-buscar_requerimentos("decisao:Aprovado")
-```
+- [ ] Clonar/baixar repositório
+- [ ] Executar `_SETUP/setup.bat` (ou `.sh`)
+- [ ] Verificar com `python _SETUP/verify_setup.py`
+- [ ] Criar arquivo `.env` com API key
+- [ ] Testar com `python E1_tools_sinarm.py`
+- [ ] Ler `QUICK_START.md`
+- [ ] Começar com E1!
 
 ---
 
-## 📊 Datasets SINARM
+**Organizado por**: OpenCode AI  
+**Data**: 17/07/2026  
+**Versão**: 2.0 (Estrutura limpa e organizada)  
+**Status**: ✅ Pronto para uso
 
-### Visão Geral:
-
-| Dataset | Registros | Descrição | Pasta |
-|---------|-----------|-----------|-------|
-| **OCORRENCIAS** | 74.758 | Furtos, apreensões, recuperações | `DADOS_SINARM/OCORRENCIAS/` |
-| **PORTES** | 2.328 | Portes válidos/vencidos | `DADOS_SINARM/PORTES/` |
-| **REGISTROS** | 12.798 | Registros de armas (defesa pessoal) | `DADOS_SINARM/REGISTROS/` |
-| **REQUERIMENTOS** | 46.116 | Requerimentos aprovados/negados | `DADOS_SINARM/REQUERIMENTOS/` |
-| **TOTAL** | **135.900** | - | - |
-
-### Colunas Principais:
-
-**OCORRENCIAS:**
-- marca_arma, especie_arma, calibre_arma
-- tipo_ocorrencia (Furto, Apreensão, Recuperação)
-- uf, municipio, ano_ocorrencia, mes_ocorrencia
-
-**PORTES:**
-- status_porte (Válido, Vencido)
-- marca_arma, especie_arma, calibre_arma
-- uf, municipio, ano_emissao
-
-**REGISTROS:**
-- status_registro (Ativo, Cancelado)
-- marca_arma, especie_arma, calibre_arma
-- categoria (CAC, Defesa)
-- uf, municipio
-
-**REQUERIMENTOS:**
-- tipo_requerimento (Porte, Registro)
-- decisao (Aprovado, Negado, Aguardando)
-- categoria (CAC, Defesa)
-- uf, municipio
-
----
-
-## 🧪 Testes
-
-### Executar Testes E1:
-```bash
-cd E1_ANATOMIA_DO_AGENTE/testes
-python TESTES_COMPLETOS.py
-```
-
-**Output esperado:**
-```
-=== TESTE TOOLS SINARM ===
-TEST 1: Busca Ocorrências ✅ 1.247 registros
-TEST 2: Busca Portes ✅ 1.856 registros
-TEST 3: Busca Registros ✅ 9.847 registros
-TEST 4: Busca Requerimentos ✅ 28.456 registros
-TEST 5: Proteção SQL Injection ✅ Rejeitado
-```
-
-### Executar Atividades E2:
-```bash
-cd E2_QUALIDADE_E_MEMORIA/conceitos/01_fewshot
-python ATIVIDADE_1A_baseline.py
-python ATIVIDADE_1B_criar_exemplos.py
-# ... continuar sequência
-```
-
----
-
-## 📖 Documentação
-
-### Guias Principais:
-- [README.md](README.md) - Este arquivo (navegação geral)
-- [QUICK_START.md](QUICK_START.md) - Início rápido
-- [INSTRUCOES_ALUNOS.md](INSTRUCOES_ALUNOS.md) - Instruções detalhadas
-- [GUIA_GITHUB.md](GUIA_GITHUB.md) - Como usar Git/GitHub
-
-### Por Encontro:
-- [E1: README_E1.md](E1_ANATOMIA_DO_AGENTE/README_E1.md) - Guia completo E1
-- [E2: README_E2.md](E2_QUALIDADE_E_MEMORIA/README_E2.md) - Guia completo E2
-- [E2: INDEX.md](E2_QUALIDADE_E_MEMORIA/INDEX.md) - Navegação rápida E2
-
-### Conceitos Específicos:
-- [Few-Shot: EXPLICACAO.md](E2_QUALIDADE_E_MEMORIA/conceitos/01_fewshot/EXPLICACAO.md)
-- [CoT: template_cot.txt](E2_QUALIDADE_E_MEMORIA/conceitos/02_cot/template_cot.txt)
-
----
-
-## 🆘 Troubleshooting
-
-### "ModuleNotFoundError: No module named 'langchain_aws'"
-```bash
-pip install langchain-aws boto3
-```
-
-### "NoCredentialsError: Unable to locate credentials"
-```bash
-aws configure
-```
-
-### "FileNotFoundError: OCORRENCIAS_2026.csv not found"
-```bash
-# Verificar que DADOS_SINARM/ está no local correto
-# Ajustar caminho em utils/tools_sinarm.py se necessário
-```
-
-### "ImportError: cannot import name 'buscar_ocorrencias'"
-```bash
-# Adicionar ao path:
-import sys
-from pathlib import Path
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
-sys.path.insert(0, str(BASE_DIR))
-from utils.tools_sinarm import buscar_ocorrencias
-```
-
-### "Agente muito lento"
-```bash
-# 1. Verificar cache ativo
-# 2. Reduzir max_tokens (padrão: 4096 → 2048)
-# 3. Usar temperature=0.0 (determinístico)
-```
-
----
-
-## 🤝 Contribuindo
-
-### Reportar Bugs:
-- Abra issue no repositório
-- Descreva: ambiente, erro, passos para reproduzir
-
-### Sugerir Melhorias:
-- Fork → Branch → Commit → Pull Request
-- Seguir padrões de código existentes
-
----
-
-## 📞 Suporte
-
-### Canais:
-- **Fórum da disciplina** (principal)
-- **Issues GitHub** (bugs/melhorias)
-- **Email professor** (dúvidas urgentes)
-- **Monitoria** (horários fixos)
-
-### FAQ:
-Consulte os README específicos:
-- [E1 FAQ](E1_ANATOMIA_DO_AGENTE/README_E1.md#-troubleshooting)
-- [E2 FAQ](E2_QUALIDADE_E_MEMORIA/README_E2.md#-faq)
-
----
-
-## 📜 Licença
-
-Uso educacional - MBA em Inteligência Artificial.  
-Material desenvolvido para disciplina "Desenvolvimento de Agentes".
-
----
-
-## ✅ Checklist Geral
-
-### Setup Inicial:
-- [ ] Python 3.8+ instalado
-- [ ] Dependências instaladas (`pip install -r requirements.txt`)
-- [ ] AWS credentials configuradas
-- [ ] Setup verificado (`python verify_setup.py`)
-
-### E1 Completo:
-- [ ] Executei agente v1.8
-- [ ] Testei 4 tools SINARM
-- [ ] Entendi ciclo ReAct
-- [ ] Medi baseline (60-70% accuracy)
-
-### E2 Completo:
-- [ ] Completei 10 atividades (1A-4B)
-- [ ] Implementei Few-Shot (+15-30% accuracy)
-- [ ] Implementei CoT (raciocínio explícito)
-- [ ] Adicionei Memory (conversação)
-- [ ] Protegi com Security (validation)
-
----
-
-**Última atualização**: 2026-07-15  
-**Versão**: 2.0 (estrutura modular organizada)  
-
-🚀 **Boa jornada no desenvolvimento de agentes!**
+**BOA AULA! 🎓**

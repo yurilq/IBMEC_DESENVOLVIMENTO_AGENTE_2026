@@ -1,224 +1,119 @@
-# QUICK START - Agente Investigador SINARM E1
+# 🚀 QUICK START - Comece em 5 Minutos!
 
-## Para Alunos com Pressa
-
-**3 passos simples para começar:**
+Guia super rápido para começar a trabalhar com os códigos.
 
 ---
 
-## Windows
+## ⚡ 3 PASSOS RÁPIDOS
 
+### 1️⃣ Baixar o Código
 ```bash
-# 1. Clone o repositório
-git clone https://github.com/yurilq/IBMEC_DESENVOLVIMENTO_AGENTE_2026.git
-cd IBMEC_DESENVOLVIMENTO_AGENTE_2026
+# Opção A: Git (recomendado)
+git clone [URL_DO_REPOSITORIO]
+cd CODIGOS_AULA
 
-# 2. Execute o setup automático
-setup.bat
-
-# 3. Execute o agente
-venv\Scripts\activate
-python E1_agente_react_v3.py
+# Opção B: Download ZIP
+# Baixe e extraia em qualquer pasta
 ```
 
-**Pronto! O agente está rodando.**
-
----
-
-## Linux/Mac
-
-```bash
-# 1. Clone o repositório
-git clone https://github.com/yurilq/IBMEC_DESENVOLVIMENTO_AGENTE_2026.git
-cd IBMEC_DESENVOLVIMENTO_AGENTE_2026
-
-# 2. Execute o setup automático
-chmod +x setup.sh
-./setup.sh
-
-# 3. Execute o agente
-source venv/bin/activate
-python E1_agente_react_v3.py
-```
-
-**Pronto! O agente está rodando.**
-
----
-
-## Não Funcionou?
-
-### 1. Verifique o Ollama
-
-O agente precisa do Ollama para funcionar.
-
-**Instalar Ollama:**
-
-Windows:
-- Baixe em: https://ollama.ai
-- Instale o executável
-
-Linux:
-```bash
-curl -fsSL https://ollama.ai/install.sh | sh
-```
-
-Mac:
-```bash
-brew install ollama
-```
-
-**Baixar modelo:**
-```bash
-ollama pull llama3
-```
-
-### 2. Execute o Verificador
-
-```bash
-# Ative o ambiente virtual primeiro
-# Windows
-venv\Scripts\activate
-
-# Linux/Mac
-source venv/bin/activate
-
-# Depois execute
-python verify_setup.py
-```
-
-Ele vai te dizer exatamente o que está faltando!
-
-### 3. Ainda com problemas?
-
-1. Abra uma issue no GitHub: https://github.com/yurilq/IBMEC_DESENVOLVIMENTO_AGENTE_2026/issues
-2. Consulte o README.md completo
-3. Procure seu erro no Troubleshooting do README.md
-
----
-
-## Comandos Úteis
-
-### Ativar ambiente virtual
-
+### 2️⃣ Instalar Dependências
 ```bash
 # Windows
-venv\Scripts\activate
+_SETUP\setup.bat
 
 # Linux/Mac
-source venv/bin/activate
+bash _SETUP/setup.sh
 ```
 
-### Desativar ambiente virtual
+### 3️⃣ Verificar
+```bash
+python _SETUP/verify_setup.py
+```
+
+✅ **Se todos os testes passaram, você está pronto!**
+
+---
+
+## 🎯 TESTAR AGORA
+
+### Teste Rápido (30 segundos)
+```bash
+python E1_tools_sinarm.py
+```
+
+**Saída esperada**: Lista de ferramentas SINARM disponíveis
+
+---
+
+## 📂 ESTRUTURA RÁPIDA
+
+```
+CODIGOS_AULA/
+├── E1_ANATOMIA_DO_AGENTE/      ← Encontro 1 (começar aqui)
+├── E2_QUALIDADE_E_MEMORIA/     ← Encontro 2
+├── DADOS_SINARM/               ← Dados reais
+├── _SETUP/                     ← Scripts de instalação
+└── _DOCUMENTACAO/              ← Guias detalhados
+```
+
+---
+
+## 🎓 COMEÇAR COM E1
 
 ```bash
-deactivate
+cd E1_ANATOMIA_DO_AGENTE
+python solucao_final/agente_v1.8.py
 ```
 
-### Executar agente
+---
+
+## 🔑 CONFIGURAR API KEY (OPENAI)
+
+Crie arquivo `.env` na raiz:
 
 ```bash
-python E1_agente_react_v3.py
+# .env
+OPENAI_API_KEY=sk-sua-chave-aqui
+OPENAI_MODEL=gpt-4o-mini
 ```
 
-### Executar testes
+---
 
+## ⚠️ PROBLEMAS?
+
+### Erro de instalação
 ```bash
-python TESTES_COMPLETOS.py
+pip install -r requirements.txt
 ```
 
-### Verificar instalação
+### Python não encontrado
+Instale Python 3.10+ de [python.org](https://python.org)
 
-```bash
-python verify_setup.py
-```
+### Mais ajuda
+Veja: `_DOCUMENTACAO/TROUBLESHOOTING.md`
 
 ---
 
-## Exemplos de Perguntas para o Agente
+## 📚 PRÓXIMOS PASSOS
 
-Após executar `python E1_agente_react_v3.py`, teste com:
-
-```
-Quantos furtos de arma ocorreram no Rio de Janeiro em 2024?
-```
-
-```
-Quais estados têm mais portes de arma vigentes?
-```
-
-```
-Qual o calibre de arma mais registrado em São Paulo?
-```
-
-```
-Houve aumento nos requerimentos entre 2023 e 2024?
-```
+1. ✅ Instalou tudo? → Leia `E1_ANATOMIA_DO_AGENTE/README_E1.md`
+2. ✅ Quer detalhes? → Leia `_DOCUMENTACAO/INSTRUCOES_ALUNOS.md`
+3. ✅ Problemas? → Leia `_DOCUMENTACAO/TROUBLESHOOTING.md`
 
 ---
 
-## Estrutura do Projeto
+## ✅ CHECKLIST
 
-```
-📦 IBMEC_DESENVOLVIMENTO_AGENTE_2026/
-├── 🚀 setup.bat              # Windows: Execute primeiro!
-├── 🚀 setup.sh               # Linux/Mac: Execute primeiro!
-├── ✅ verify_setup.py        # Verifica se tudo está OK
-│
-├── 🤖 E1_agente_react_v3.py  # AGENTE PRINCIPAL
-├── 🛠️ E1_tools_sinarm.py     # Ferramentas do agente
-├── 🧪 TESTES_COMPLETOS.py    # Testes
-│
-└── 📊 DADOS_SINARM/          # Dados (26 CSVs)
-    ├── OCORRENCIAS/
-    ├── PORTES/
-    ├── REGISTROS/
-    └── REQUERIMENTOS/
-```
+- [ ] Baixei o código
+- [ ] Executei `_SETUP/setup.bat` (ou `.sh`)
+- [ ] `verify_setup.py` passou todos os testes
+- [ ] Criei arquivo `.env` com API key
+- [ ] Testei com `python E1_tools_sinarm.py`
+- [ ] Pronto para E1! 🎉
 
 ---
 
-## Requisitos Mínimos
+**Tempo total**: 5 minutos  
+**Próximo**: Entre em `E1_ANATOMIA_DO_AGENTE/`
 
-- **Python:** 3.8+ (recomendado: 3.10+)
-- **Ollama:** Última versão
-- **Espaço em disco:** ~500 MB
-- **RAM:** 4 GB mínimo (8 GB recomendado)
-- **Sistema operacional:** Windows 10+, Linux (qualquer distro recente), macOS 10.15+
-
----
-
-## O Que Você Vai Aprender
-
-Neste E1 (Encontro 1), você vai entender:
-
-✅ Como funciona um agente LLM  
-✅ Padrão ReAct (Reasoning + Acting)  
-✅ LangChain framework  
-✅ Integração com Ollama (modelos locais)  
-✅ Criação de tools customizadas  
-✅ Manipulação de datasets reais  
-✅ Logging e debugging de agentes  
-
----
-
-## Próximos Encontros
-
-- **E2:** Memória e contexto
-- **E3:** RAG (Retrieval-Augmented Generation)
-- **E4:** Interface web
-- **E5:** Deploy em produção
-- **E6:** Multi-agentes
-- **E7:** Projeto final
-
----
-
-## Links Importantes
-
-- **Repositório:** https://github.com/yurilq/IBMEC_DESENVOLVIMENTO_AGENTE_2026
-- **Ollama:** https://ollama.ai
-- **LangChain Docs:** https://python.langchain.com
-- **Issues (dúvidas/bugs):** https://github.com/yurilq/IBMEC_DESENVOLVIMENTO_AGENTE_2026/issues
-
----
-
-**Bons estudos! 🚀**
+**BOA AULA! 🎓**
