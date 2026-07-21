@@ -1,9 +1,12 @@
 # TEMPLATE_HORA_2.py
 # Código de referência para Parte 2: Primeira Tool (SEM decorator)
 # Use se ficar travado na Parte 2
+#
+# ⚠️ ATUALIZADO PARA LANGCHAIN 1.3+
+# Usa agente MANUAL (sem initialize_agent que foi removido)
 
 from langchain_ollama import OllamaLLM
-from langchain.agents import Tool, initialize_agent, AgentType
+from langchain.agents import Tool
 import pandas as pd
 
 # ============================================================
@@ -20,8 +23,9 @@ def contar_armas_marca(marca: str):
                      sep=";", 
                      encoding="latin1")
     
-    # Filtrar por marca
-    resultado = df[df["MARCA_ARMA"] == marca.upper()]
+    # Filtrar por marca (usa .str.contains para busca parcial mais robusta)
+    df["MARCA_ARMA"] = df["MARCA_ARMA"].str.strip()
+    resultado = df[df["MARCA_ARMA"].str.contains(marca, case=False, na=False)]
     
     # Contar
     total = len(resultado)
@@ -47,35 +51,33 @@ if __name__ == "__main__":
     print("="*60)
     
     # ============================================================
-    # CRIAR AGENTE COM TOOL MANUAL
+    # AGENTE MANUAL (LangChain 1.3+)
     # ============================================================
     
     print("\n" + "="*60)
-    print("CRIANDO AGENTE COM TOOL")
+    print("CRIANDO AGENTE MANUAL")
     print("="*60)
     
     # LLM
     llm = OllamaLLM(model="llama3", temperature=0)
     
-    # Tool MANUAL (jeito chato)
-    tool_contar = Tool(
-        name="ContarArmas",
-        func=contar_armas_marca,
-        description="""Conta quantas armas de uma marca específica estão registradas no SINARM.
+    # Agente manual simples
+    def agente_manual(pergunta: str):
+        """Agente manual que seleciona e executa a tool"""
+        print(f"\n[PERGUNTA] {pergunta}")
+        print("-"*60)
         
-Input: Nome da marca (string) - ex: 'Taurus', 'Glock', 'Rossi'
-Output: Total de armas encontradas
-
-Use esta ferramenta quando usuário perguntar sobre QUANTIDADE de armas de uma MARCA específica."""
-    )
-    
-    # Agente
-    agente = initialize_agent(
-        tools=[tool_contar],
-        llm=llm,
-        agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
-        verbose=True
-    )
+        pergunta_lower = pergunta.lower()
+        
+        # Detectar marca
+        marcas = ["taurus", "glock", "rossi", "beretta"]
+        for marca in marcas:
+            if marca in pergunta_lower:
+                print(f"[AÇÃO] Detectei marca: {marca}")
+                print(f"[TOOL] Chamando contar_armas_marca('{marca.capitalize()}')")
+                return contar_armas_marca(marca.capitalize())
+        
+        return "Não consegui identificar a marca da arma na pergunta."
     
     # Testar
     print("\n" + "="*60)
@@ -85,7 +87,7 @@ Use esta ferramenta quando usuário perguntar sobre QUANTIDADE de armas de uma M
     pergunta = "Quantas armas Taurus existem?"
     print(f"❓ PERGUNTA: {pergunta}\n")
     
-    resposta = agente.invoke({"input": pergunta})
+    resposta = agente_manual(pergunta)
     
-    print(f"\n✅ RESPOSTA FINAL: {resposta['output']}\n")
+    print(f"\n✅ RESPOSTA FINAL: {resposta}\n")
     print("="*60)

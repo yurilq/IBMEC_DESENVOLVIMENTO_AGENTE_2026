@@ -32,10 +32,25 @@ except ImportError:
 # 3. Verificar LangChain
 print("[3/6] Verificando LangChain...")
 try:
-    from langchain_core.tools import tool
-    ok.append("✅ langchain_core instalado")
+    import langchain_core
+    versao_core = langchain_core.__version__
+    ok.append(f"✅ langchain_core {versao_core}")
+    
+    # Verificar versão (avisar se < 1.0)
+    versao_major = int(versao_core.split('.')[0])
+    if versao_major < 1:
+        avisos.append(f"⚠️  LangChain {versao_core} é antiga (recomendado 1.3+)")
+        avisos.append("   Atualize: pip install --upgrade langchain-core langchain-ollama")
 except ImportError:
     erros.append("❌ langchain_core não instalado (pip install langchain-core)")
+except Exception as e:
+    avisos.append(f"⚠️  Não foi possível verificar versão LangChain: {e}")
+
+try:
+    from langchain_core.tools import tool
+    ok.append("✅ @tool decorator disponível")
+except ImportError:
+    erros.append("❌ @tool não disponível (atualize langchain-core)")
 
 try:
     from langchain_ollama import OllamaLLM

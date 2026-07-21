@@ -6,6 +6,18 @@
 
 ---
 
+## 📖 INÍCIO RÁPIDO
+
+### 👨‍🏫 Para Professores:
+**⭐ NOVO:** [QUICK_START_PROFESSOR.md](QUICK_START_PROFESSOR.md) - Checklist rápido 1 página  
+Ou veja: [ROTEIRO_COMPLETO_E3.md](ROTEIRO_COMPLETO_E3.md) - Timeline detalhada
+
+### 👨‍🎓 Para Alunos:
+1. Execute `python verificar_ambiente.py`
+2. Siga os guias em ordem: [01_GUIAS_ALUNO/](01_GUIAS_ALUNO/)
+
+---
+
 ## ⚠️ AVISOS IMPORTANTES
 
 ### 1️⃣ Verificar Ambiente ANTES de Começar
