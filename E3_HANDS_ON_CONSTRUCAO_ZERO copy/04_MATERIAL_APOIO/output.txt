@@ -1,0 +1,70 @@
+﻿======================================================================
+DEMONSTRAÃ├O: ENTENDENDO Enum (AgentType)
+======================================================================
+
+----------------------------------------------------------------------
+PARTE 1: SEM ENUM - Usando strings direto (PROBLEMAS)
+----------------------------------------------------------------------
+
+Teste 1 (correto): Agente ReAct criado [OK]
+Teste 2 (erro digitaþÒo): ERRO: Tipo desconhecido [X]
+  -- PROBLEMA: Erro s¾ aparece em tempo de execuþÒo!
+
+Teste 3: Sem IDE ajuda
+  -- Precisa DECORAR ou CONSULTAR documentaþÒo
+
+----------------------------------------------------------------------
+PARTE 2: COM ENUM - Como LangChain faz (SOLUÃ├O)
+----------------------------------------------------------------------
+
+1. Usando Enum (recomendado):
+   Agente ReAct criado [OK]
+
+2. Ver TODAS as opþ§es disponÝveis:
+   - ZERO_SHOT_REACT           = 'zero-shot-react-description'
+   - CONVERSATIONAL_REACT      = 'conversational-react-description'
+   - SELF_ASK_SEARCH           = 'self-ask-with-search'
+
+3. Tentando erro de digitaþÒo:
+   TipoAgente.ZERO_SHOT_REACT_DESCRIPTON  <- IDE avisa ANTES!
+   -- AttributeError: 'TipoAgente' has no attribute '...'
+
+4. Autocomplete da IDE:
+   Digite: TipoAgente.
+   IDE mostra: ZERO_SHOT_REACT | CONVERSATIONAL_REACT | SELF_ASK_SEARCH
+   Nao precisa decorar! [OK]
+
+----------------------------------------------------------------------
+PARTE 3: ANATOMIA - O que estß acontecendo?
+----------------------------------------------------------------------
+
+1. Objeto completo:
+   TipoAgente.ZERO_SHOT_REACT
+   -- Tipo: <enum 'TipoAgente'>
+
+2. Nome (MAI┌SCULAS):
+   ZERO_SHOT_REACT
+   -- O que vocÛ escreve no c¾digo
+
+3. Valor (string):
+   zero-shot-react-description
+   -- O que LangChain usa internamente
+
+4. SÒo equivalentes?
+   TipoAgente.ZERO_SHOT_REACT.value == 'zero-shot-react-description'
+python : Traceback (most recent call last):
+No linha:1 caractere:1
++ python exemplo_enum_agenttype.py 2>&1 | Out-File -FilePath output.txt ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "E:\documentos\ibmec\CODIGOS_AULA\E3_HANDS_ON_CONSTRUCAO_ZERO\04_MATERIAL_APOIO\exemplo_enum_agenttype.py", 
+line 115, in <module>
+    print(f"   {tipo.value == 'zero-shot-react-description'} \u2713")
+  File "C:\Program 
+Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 
+19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2713' in position 8: character maps to <undefined>

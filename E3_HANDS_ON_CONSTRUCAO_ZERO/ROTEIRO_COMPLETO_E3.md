@@ -52,7 +52,11 @@ Digite no terminal:
    ✅ Esperado: Python 3.9 ou superior
 
 2️⃣ ollama list
-   ✅ Esperado: llama3 instalado
+   ✅ Esperado: llama3 ou llama3.2:1b instalado
+   
+   ⚠️  IMPORTANTE: Se RAM limitada (< 8GB):
+       ollama pull llama3.2:1b
+       (mais leve, funciona igual!)
 
 3️⃣ code --version
    ✅ Esperado: VSCode instalado
@@ -93,10 +97,14 @@ from langchain_ollama import OllamaLLM
 # Resposta: "Conexão com modelo local Ollama"
 
 # LINHA 2: Criar conexão
-llm = OllamaLLM(model="llama3")
+llm = OllamaLLM(model="llama3")  # ou "llama3.2:1b" se tiver pouca RAM
 
 # Pausa: "O que fizemos?"
 # Resposta: "Criamos objeto que fala com Ollama"
+
+# NOTA PROFESSOR: Se alguém tiver erro "out of memory":
+# → Orientar trocar para "llama3.2:1b" (modelo menor)
+# → Ver GUIA_ESCOLHA_MODELO_LLM.md em 04_MATERIAL_APOIO/
 
 # LINHA 3: Enviar pergunta
 resposta = llm.invoke("Olá, tudo bem?")
@@ -126,6 +134,8 @@ Se não: "Vamos debugar juntos"
 Erros comuns:
 - Ollama não rodando: ollama serve
 - Modelo não existe: ollama pull llama3
+- Out of memory: ollama pull llama3.2:1b (trocar no código)
+  → Explique: "Modelo menor funciona igual, só um pouco menos eloquente"
 ```
 
 ---
@@ -141,6 +151,7 @@ Erros comuns:
 **Pergunta 2:** "O que é a linha 2?"
 - Criar objeto = preparar ferramenta
 - model="llama3" = escolher qual modelo usar
+- **Se alguém perguntou sobre RAM:** "Existe llama3.2:1b menor (1GB vs 5GB)"
 
 **Pergunta 3:** "O que é a linha 3?"
 - invoke = enviar pergunta
@@ -1229,6 +1240,40 @@ SE TODOS ✅: PARABÉNS! AGENTE COMPLETO! 🎉
 - Prioridade 1: Parte 3 (decorators) - NÃO pular
 - Prioridade 2: Parte 4 (4 tools + cache)
 - Pode reduzir: Parte 5 (deixar Few-Shot/CoT como exercício casa)
+
+### **Troubleshooting: Escolha de Modelo LLM**
+
+**Problema:** Aluno com erro "out of memory" ao usar llama3
+
+**Solução imediata:**
+```bash
+# 1. Baixar modelo menor
+ollama pull llama3.2:1b
+
+# 2. Trocar no código
+# ANTES:
+llm = OllamaLLM(model="llama3", temperature=0)
+
+# DEPOIS:
+llm = OllamaLLM(model="llama3.2:1b", temperature=0)
+```
+
+**Explicação ao aluno:**
+> "O modelo menor (1B) usa 1.3GB vs 4.7GB do llama3.  
+> Funciona igual, só um pouco menos eloquente.  
+> Perfeito para aprendizado!"
+
+**Material de apoio:** `04_MATERIAL_APOIO/GUIA_ESCOLHA_MODELO_LLM.md`
+
+**Lição pedagógica:**
+- Hardware limita escolhas (realidade de desenvolvimento)
+- Trade-offs: tamanho vs qualidade vs velocidade
+- Otimização é parte do trabalho real
+
+**Quando mencionar:**
+- ✅ Setup inicial (13:00-13:15)
+- ✅ Se alguém tiver erro durante aula
+- ✅ Discussão final (17:40-18:00): "Qual modelo usar em produção?"
 
 ---
 

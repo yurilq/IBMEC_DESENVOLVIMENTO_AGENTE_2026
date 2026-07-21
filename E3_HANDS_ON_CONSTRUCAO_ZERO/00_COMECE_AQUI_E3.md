@@ -1,8 +1,39 @@
 # 🚀 E3: CONSTRUÇÃO DO AGENTE DO ZERO
 
 **Encontro 3 - Terça-feira 28/07/2026**  
-**Horário:** 13h00 - 18h00 (5 horas)  
-**Status:** 📦 PRONTO PARA USO
+**Horário:** 13h00 - 18h00 (5 horas previstas, 6-7h reais com alunos)  
+**Status:** ✅ ATUALIZADO PARA LANGCHAIN 1.3+
+
+---
+
+## ⚠️ AVISOS IMPORTANTES
+
+### 1️⃣ Verificar Ambiente ANTES de Começar
+Execute o script de verificação:
+```bash
+python verificar_ambiente.py
+```
+
+### 2️⃣ Tempo Realista
+- **Previsto:** 5h (material didático)
+- **Real com alunos:** 6-7h (considere dividir em 2 dias)
+
+### 3️⃣ LangChain 1.3+
+Material atualizado para LangChain 1.3+ (sem `initialize_agent`)
+
+---
+
+## ⚠️ LEIA PRIMEIRO: ESTRUTURA DE PASTAS
+
+**IMPORTANTE:** Esta pasta contém MATERIAL DE REFERÊNCIA.  
+Você vai trabalhar em uma **PASTA SEPARADA** que você criará.
+
+📖 **Leia antes de começar:** [ESTRUTURA_PASTAS_E3.md](ESTRUTURA_PASTAS_E3.md)
+
+**Resumo rápido:**
+- ✅ **Esta pasta** = Material para consultar (guias, templates, exemplos)
+- ✅ **Sua pasta de trabalho** = Onde você criará arquivos .py e colocará CSV
+- ⚠️ NÃO trabalhe dentro desta pasta E3_HANDS_ON_CONSTRUCAO_ZERO!
 
 ---
 
@@ -99,26 +130,36 @@ E3_CONSTRUCAO_DO_ZERO/
 ### **Preparação (1 hora antes):**
 
 ```bash
-# 1. Verificar Ollama rodando
+# 1. VERIFICAR AMBIENTE
+python verificar_ambiente.py
+
+# 2. Verificar Ollama rodando
 ollama serve
 
-# 2. Testar modelo
+# 3. Escolher e testar modelo (IMPORTANTE!)
+# Se erro de memória, use modelo menor:
+ollama pull llama3.2:1b
+ollama run llama3.2:1b
+
+# Se RAM suficiente (8GB+):
 ollama run llama3
 
-# 3. Verificar dados SINARM
+# 4. Verificar dados SINARM
 ls DADOS_SINARM/OCORRENCIAS_2026.csv
 
-# 4. Abrir arquivos no VSCode:
+# 5. Abrir arquivos no VSCode:
 #    - ROTEIRO_COMPLETO_E3.md (timeline)
 #    - PARTE_3_DECORATOR.md (slides decorator)
-#    - TEMPLATE_HORA_5.py (código final)
+#    - TEMPLATE_HORA_5.py (código final atualizado)
 
-# 5. Projetor + terminal prontos
+# 6. Projetor + terminal prontos
 ```
 
 ### **Durante a aula:**
 
 ✅ **Seguir ROTEIRO_COMPLETO_E3.md** (passo a passo)  
+✅ **Código atualizado para LangChain 1.3+** (sem initialize_agent)  
+✅ **Se aluno tiver erro de memória:** Ver [GUIA_ESCOLHA_MODELO_LLM.md](04_MATERIAL_APOIO/GUIA_ESCOLHA_MODELO_LLM.md)  
 ✅ **Parte 3 (15:15-16:00): REFORÇAR @decorator**  
    → Usar GUIA_DECORATOR_DETALHADO.md  
    → Mostrar EXEMPLOS_DECORATOR.py rodando  
