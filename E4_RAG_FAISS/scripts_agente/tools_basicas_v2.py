@@ -21,15 +21,28 @@ def carregar_csv():
     if not CAMINHO_DADOS.exists():
         raise FileNotFoundError(f"Pasta DADOS_SINARM não encontrada em: {CAMINHO_DADOS}")
     
-    df = pd.read_csv(CAMINHO_DADOS / "OCORRENCIAS" / "OCORRENCIAS_2026.csv",
-                     sep=";", encoding="latin1")
+    csv_path = CAMINHO_DADOS / "OCORRENCIAS" / "OCORRENCIAS_2026.csv"
+    
+    # Tentar múltiplos encodings (compatibilidade Windows/Linux/Mac)
+    encodings = ['latin1', 'utf-8', 'cp1252', 'iso-8859-1']
+    df = None
+    
+    for encoding in encodings:
+        try:
+            df = pd.read_csv(csv_path, sep=";", encoding=encoding)
+            print(f"[OK] CSV carregado com encoding '{encoding}' - {len(df)} linhas")
+            break
+        except (UnicodeDecodeError, UnicodeError):
+            continue
+    
+    if df is None:
+        raise ValueError(f"Não foi possível ler o CSV com nenhum encoding: {encodings}")
     
     # Limpar espacos em todas as colunas relevantes
     df["MARCA_ARMA"] = df["MARCA_ARMA"].str.strip()
     df["CALIBRE_ARMA"] = df["CALIBRE_ARMA"].str.strip()
     df["TIPO_OCORRENCIA"] = df["TIPO_OCORRENCIA"].str.strip()
     
-    print(f"[OK] CSV carregado! {len(df)} linhas")
     return df
 
 
