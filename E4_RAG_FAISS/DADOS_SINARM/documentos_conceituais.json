@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "categoria": "Definicoes_Basicas",
+    "texto": "Arma apreendida é toda arma de fogo retirada de circulação por autoridade policial competente, podendo ocorrer em situações de crime flagrante, porte ilegal, medida cautelar ou busca e apreensão judicial. A apreensão é registrada em sistema próprio e a arma fica sob custódia da polícia até decisão judicial sobre seu destino final."
+  },
+  {
+    "id": 2,
+    "categoria": "Definicoes_Basicas",
+    "texto": "BO significa Boletim de Ocorrência, documento oficial que registra crimes, contravenções e eventos relevantes à segurança pública. É lavrado pela autoridade policial quando há notícia de crime, contendo informações sobre fatos, vítimas, suspeitos, testemunhas e circunstâncias do evento."
+  },
+  {
+    "id": 3,
+    "categoria": "Definicoes_Basicas",
+    "texto": "Furto é crime previsto no artigo 155 do Código Penal brasileiro, caracterizado pela subtração de coisa alheia móvel para si ou para outrem, SEM o emprego de violência ou grave ameaça contra pessoa. A pena é de reclusão de 1 a 4 anos e multa."
+  },
+  {
+    "id": 4,
+    "categoria": "Definicoes_Basicas",
+    "texto": "Roubo é crime previsto no artigo 157 do Código Penal brasileiro, caracterizado pela subtração de coisa alheia móvel mediante emprego de violência ou grave ameaça contra pessoa, ou após tê-la reduzido à impossibilidade de resistência. A pena é de reclusão de 4 a 10 anos e multa."
+  },
+  {
+    "id": 5,
+    "categoria": "Definicoes_Tecnicas",
+    "texto": "Calibre de arma de fogo é a medida do diâmetro interno do cano, expressa em milímetros (sistema métrico) ou polegadas (sistema imperial). Define o tamanho da munição compatível com a arma. Exemplos: calibre .38 (9,65mm), 9mm (Parabellum), .40 (10,16mm), .380 (9mm curto), .45 (11,43mm)."
+  },
+  {
+    "id": 6,
+    "categoria": "Definicoes_Tecnicas",
+    "texto": "Tipos de arma segundo classificação SINARM: Pistola (semiautomática, carregador removível), Revólver (tambor giratório, capacidade fixa), Fuzil (cano longo, uso militar), Espingarda (alma lisa, múltiplos projéteis), Carabina (cano médio, uso esportivo), Submetralhadora (automática, calibre pistola)."
+  },
+  {
+    "id": 7,
+    "categoria": "Marcas_Armas",
+    "texto": "Taurus é fabricante brasileiro de armas de fogo, fundada em 1939 em Porto Alegre/RS. Produz revólveres (modelo 85, 605, 856), pistolas (G2C, G3, PT92) e rifles. É uma das maiores fabricantes de armas leves da América Latina, com produtos exportados para mais de 80 países."
+  },
+  {
+    "id": 8,
+    "categoria": "Marcas_Armas",
+    "texto": "Glock é fabricante austríaca fundada em 1963, reconhecida mundialmente por pistolas poliméricas. Modelos principais: Glock 17 (9mm, 17 tiros), Glock 19 (compacta 9mm), Glock 22 (.40), Glock 26 (subcompacta). Usada por polícias e forças armadas em mais de 100 países."
+  },
+  {
+    "id": 9,
+    "categoria": "Marcas_Armas",
+    "texto": "Rossi é fabricante brasileiro de armas de fogo, fundada em 1889 em São Leopoldo/RS. Especializada em revólveres de baixo custo (calibres .22, .32, .38). Histórico de qualidade inferior comparada à Taurus, com problemas frequentes de acabamento e durabilidade."
+  },
+  {
+    "id": 10,
+    "categoria": "Marcas_Armas",
+    "texto": "Beretta é fabricante italiana fundada em 1526, uma das mais antigas do mundo. Famosa pela pistola Beretta 92 (9mm, adotada por Forças Armadas dos EUA como M9), submetralhadoras (PM12) e espingardas. Referência em qualidade e confiabilidade no mercado global."
+  },
+  {
+    "id": 11,
+    "categoria": "Marcas_Armas",
+    "texto": "Smith & Wesson é fabricante americana fundada em 1852, pioneira em revólveres. Modelos icônicos: S&W Model 10 (.38 Special), Model 29 (.44 Magnum), M&P Shield (pistola compacta). Amplamente usada por polícias americanas. Conhecida por revólveres de alta qualidade e durabilidade."
+  },
+  {
+    "id": 12,
+    "categoria": "Legislacao",
+    "texto": "Estatuto do Desarmamento (Lei 10.826/2003) regulamenta registro, posse e comercialização de armas de fogo no Brasil. Define que porte de arma sem autorização é crime com pena de 2 a 4 anos de reclusão. Estabelece requisitos: idade mínima 25 anos, capacidade técnica, aptidão psicológica e ausência de antecedentes criminais."
+  },
+  {
+    "id": 13,
+    "categoria": "Legislacao",
+    "texto": "SINARM (Sistema Nacional de Armas) é banco de dados nacional gerenciado pela Polícia Federal para registro, cadastro e rastreamento de armas de fogo em circulação no Brasil. Criado pela Lei 9.437/1997 e mantido pela Lei 10.826/2003, registra proprietários, transferências, apreensões e destruições."
+  },
+  {
+    "id": 14,
+    "categoria": "Procedimentos_Policiais",
+    "texto": "Apreensão de arma de fogo segue protocolo: 1) Registro fotográfico in loco, 2) Lacre de segurança com numeração única, 3) Termo de apreensão detalhado (marca, modelo, numeração, estado), 4) Registro no SINARM em até 48h, 5) Perícia criminal para verificar adulteração, 6) Custódia em arsenal da unidade policial até decisão judicial."
+  },
+  {
+    "id": 15,
+    "categoria": "Procedimentos_Policiais",
+    "texto": "Identificação de arma de fogo exige verificação de: 1) Numeração de série (gravada no cano e armação), 2) Marca e modelo, 3) Calibre, 4) Capacidade de munição, 5) País de fabricação, 6) Sinais de adulteração (raspagem, solda, numeração regravada). Adulteração configura crime autônomo com pena de 3 a 6 anos de reclusão."
+  },
+  {
+    "id": 16,
+    "categoria": "Estatisticas",
+    "texto": "Segundo dados da Polícia Federal, em 2023 foram apreendidas no Brasil cerca de 43.000 armas de fogo ilegais. Desse total, 62% eram revólveres calibre .38, 23% pistolas 9mm, 8% espingardas calibre 12, 4% pistolas .380 e 3% outras. Estados com maior apreensão: São Paulo (28%), Rio de Janeiro (19%), Minas Gerais (11%)."
+  },
+  {
+    "id": 17,
+    "categoria": "Estatisticas",
+    "texto": "Marcas mais apreendidas em crimes no Brasil (2023): 1º Taurus (41%), 2º Rossi (18%), 3º CBC/Magtech (12%), 4º Glock (7%), 5º Beretta (4%), 6º Smith & Wesson (3%), 7º Outras (15%). Armas nacionais (Taurus, Rossi) somam 59% das apreensões devido ao grande volume em circulação e roubos históricos."
+  },
+  {
+    "id": 18,
+    "categoria": "Comparacoes",
+    "texto": "Diferença entre furto e roubo de arma: FURTO ocorre sem violência ou ameaça (ex: invasão residencial enquanto morador ausente, subtração de arma deixada em veículo). ROUBO envolve violência ou grave ameaça (ex: assalto à mão armada, render vigia para subtrair arma). A pena do roubo é significativamente maior (4 a 10 anos vs 1 a 4 anos)."
+  },
+  {
+    "id": 19,
+    "categoria": "Comparacoes",
+    "texto": "Pistola vs Revólver: PISTOLA é semiautomática, usa carregador removível (7 a 17 tiros), ejeção automática de estojos, recarga rápida, mecanismo mais complexo, tendência a emperramento. REVÓLVER usa tambor giratório (5 a 8 tiros), estojos permanecem no tambor, recarga lenta, mecanismo mais simples, mais confiável em condições adversas. Pistola preferida por capacidade, revólver por confiabilidade."
+  },
+  {
+    "id": 20,
+    "categoria": "Comparacoes",
+    "texto": "Calibre .38 vs 9mm: .38 Special (9,65mm) é calibre tradicional de revólver, desenvolvido em 1898, velocidade moderada, recuo suave, precisão boa para curta distância. 9mm Parabellum é calibre de pistola, desenvolvido em 1902, velocidade superior, maior capacidade de perfuração, recuo moderado, mais munição disponível. Ambos equivalentes em poder de parada, mas 9mm mais moderno e versátil."
+  }
+]

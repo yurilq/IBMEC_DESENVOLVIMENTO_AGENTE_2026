@@ -1,0 +1,99 @@
+# ============================================================================
+# REQUIREMENTS.TXT - Agentes E4 (RAG, Few-Shot, CoT)
+# ============================================================================
+# 
+# Este arquivo contém TODAS as dependências necessárias para:
+# - Agente v4.5 (RAG TF-IDF)
+# - Agente v4.6 (Few-Shot + CoT)
+# - Agente v4.7 (RAG + Few-Shot + CoT)
+#
+# INSTALAÇÃO:
+#   pip install -r requirements.txt
+#
+# AMBIENTE RECOMENDADO:
+#   Python 3.11 ou superior
+#   Windows 10/11, Linux, ou macOS
+#
+# ============================================================================
+
+# ────────────────────────────────────────────────────────────────────────────
+# CORE: LangChain Framework (Orquestração de LLMs e Tools)
+# ────────────────────────────────────────────────────────────────────────────
+langchain==1.3.13
+langchain-core==1.5.0
+langchain-openai==1.4.0
+langchain-community==0.4.2
+langchain-text-splitters==1.1.2
+
+# ────────────────────────────────────────────────────────────────────────────
+# LLM: OpenAI API (via OpenRouter)
+# ────────────────────────────────────────────────────────────────────────────
+openai==2.47.0
+tiktoken==0.13.0
+
+# ────────────────────────────────────────────────────────────────────────────
+# ML: RAG com TF-IDF (Scikit-Learn)
+# ────────────────────────────────────────────────────────────────────────────
+scikit-learn==1.9.0
+numpy==2.4.2
+scipy>=1.10.0
+
+# ────────────────────────────────────────────────────────────────────────────
+# DATA: Manipulação de Dados (Pandas)
+# ────────────────────────────────────────────────────────────────────────────
+pandas==2.2.2
+pyarrow>=15.0.0
+
+# ────────────────────────────────────────────────────────────────────────────
+# CONFIG: Gerenciamento de Variáveis de Ambiente
+# ────────────────────────────────────────────────────────────────────────────
+python-dotenv==1.2.1
+
+# ────────────────────────────────────────────────────────────────────────────
+# VALIDATION: Pydantic (Validação de Dados)
+# ────────────────────────────────────────────────────────────────────────────
+pydantic==2.12.5
+pydantic-core==2.41.5
+pydantic-settings==2.14.2
+
+# ────────────────────────────────────────────────────────────────────────────
+# HTTP: Requisições Assíncronas (para APIs)
+# ────────────────────────────────────────────────────────────────────────────
+httpx==0.28.1
+httpx-sse==0.4.3
+
+# ────────────────────────────────────────────────────────────────────────────
+# UTILITIES: Retry Logic e Utilitários
+# ────────────────────────────────────────────────────────────────────────────
+tenacity==8.5.0
+
+# ────────────────────────────────────────────────────────────────────────────
+# OPCIONAL: Jupyter Notebook (para exploração interativa)
+# ────────────────────────────────────────────────────────────────────────────
+# jupyter==1.1.1
+# notebook==7.3.2
+
+# ────────────────────────────────────────────────────────────────────────────
+# NOTES:
+# ────────────────────────────────────────────────────────────────────────────
+# 
+# VERSÕES FIXADAS:
+# - Todas as versões principais estão fixadas (==) para garantir
+#   compatibilidade e reprodutibilidade entre diferentes ambientes.
+# 
+# VERSÕES FLEXÍVEIS:
+# - Scipy e PyArrow usam (>=) porque são dependências indiretas
+#   e versões mais novas geralmente mantêm compatibilidade.
+#
+# COMPATIBILIDADE:
+# - Testado em: Windows 11, Python 3.11
+# - Deve funcionar em: Linux, macOS, Python 3.10+
+#
+# TAMANHO INSTALAÇÃO:
+# - ~500 MB de downloads
+# - ~1.5 GB após instalação
+#
+# TEMPO INSTALAÇÃO:
+# - ~3-5 minutos (dependendo da conexão)
+#
+# ============================================================================
