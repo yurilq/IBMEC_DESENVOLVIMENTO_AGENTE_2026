@@ -43,7 +43,8 @@ CODIGOS_AULA/
 │
 ├── 🎯 E1_ANATOMIA_DO_AGENTE/      ← Encontro 1 (Tools + ReAct)
 ├── 🎯 E2_QUALIDADE_E_MEMORIA/     ← Encontro 2 (Few-shot + CoT)
-├── 🎯 E3_HANDS_ON_CONSTRUCAO_ZERO/← Encontro 3 (LangChain vs CrewAI)
+├── 🎯 E3_HANDS_ON_CONSTRUCAO_ZERO/← Encontro 3 (Hands-On Prático)
+├── 🎯 E4_RAG_FAISS/               ← Encontro 4 (RAG + TF-IDF)
 │
 ├── 📊 DADOS_SINARM/               ← Datasets reais PCDF
 │   ├── OCORRENCIAS_2026.csv       (74.758 registros)
@@ -79,11 +80,15 @@ CODIGOS_AULA/
 |---|----------|--------|--------|--------|
 | **E1** | Encontro 1 | Anatomia do Agente | ✅ Pronto | `E1_ANATOMIA_DO_AGENTE/` |
 | **E2** | Encontro 2 | Qualidade & Memória | ✅ Pronto | `E2_QUALIDADE_E_MEMORIA/` |
-| **E3** | Encontro 3 | LangChain vs CrewAI | 🔄 Em prep. | `E3_HANDS_ON_CONSTRUCAO_ZERO/` |
-| **E4** | Encontro 4 | RAG + FAISS | ⏳ Planejado | - |
+| **E3** | Encontro 3 | Hands-On Construção | ✅ Pronto | `E3_HANDS_ON_CONSTRUCAO_ZERO/` |
+| **E4** | Encontro 4 | RAG + TF-IDF | ✅ Pronto | `E4_RAG_FAISS/` |
 | **E5** | Encontro 5 | Especialização PDFs | ⏳ Planejado | - |
 | **E6** | Encontro 6 | Deploy + Guardrails | ⏳ Planejado | - |
 | **E7** | Encontro 7 | Métricas + Final | ⏳ Planejado | - |
+
+**Notas:**
+- **E3**: Hands-On prático (LangChain vs CrewAI será abordado posteriormente)
+- **E4**: RAG com TF-IDF (ao invés de FAISS devido a compatibilidade Windows)
 
 ---
 
@@ -202,10 +207,17 @@ cd E2_QUALIDADE_E_MEMORIA
 python solucao_final/agente_v2.0.py
 ```
 
-### E3 - LangChain vs CrewAI
+### E3 - Hands-On Construção
 ```bash
 cd E3_HANDS_ON_CONSTRUCAO_ZERO
-# (em desenvolvimento)
+# Consultar README.md do E3 para instruções
+```
+
+### E4 - RAG + TF-IDF
+```bash
+cd E4_RAG_FAISS
+python teste_funcoes_direto.py
+# Ou seguir: ROTEIRO_AULA_ATUALIZADO_TF_IDF.md (professor)
 ```
 
 ---
@@ -299,8 +311,9 @@ Uso restrito a alunos da disciplina
 ---
 
 **Organizado por**: OpenCode AI  
-**Data**: 17/07/2026  
-**Versão**: 2.0 (Estrutura limpa e organizada)  
+**Data**: 23/07/2026  
+**Última atualização**: E4 - RAG com TF-IDF  
+**Versão**: 2.1 (E4 completo)  
 **Status**: ✅ Pronto para uso
 
 **BOA AULA! 🎓**
