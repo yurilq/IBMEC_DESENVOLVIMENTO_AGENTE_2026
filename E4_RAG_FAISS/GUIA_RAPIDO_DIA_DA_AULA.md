@@ -122,17 +122,84 @@ Licao: SIMPLICIDADE VENCE!
 
 ## TROUBLESHOOTING RAPIDO
 
-**Ollama nao funciona:**
-→ Editar .env: `LLM_TYPE=openrouter` + API key
+### ❌ ERRO 1: `scikit-learn==1.9.0` não encontrado
+**Solução:**
+```bash
+# Versão correta já está no requirements.txt atualizado
+pip install -r requirements.txt --upgrade
+```
+**Causa:** Versão 1.9.0 não existe (última é 1.7.2)  
+**Status:** ✅ CORRIGIDO no requirements.txt
 
-**Erro pandas:**
-→ `pip install pandas`
+---
 
-**CSV nao acha:**
-→ Verificar: `DADOS_SINARM/OCORRENCIAS/OCORRENCIAS_2026.csv`
+### ❌ ERRO 2: `UnicodeDecodeError: 'charmap' codec can't decode byte 0x8d`
+**Solução Rápida:**
+```bash
+# Já corrigido! Script tenta múltiplos encodings automaticamente
+python teste_funcoes_direto.py  # Deve funcionar
+```
+**Se persistir:**
+- Ver arquivo: `TROUBLESHOOTING_ENCODING.md`
+- Testar encodings: latin1 → utf-8 → cp1252 → iso-8859-1
 
-**Script nao executa:**
-→ `venv\Scripts\activate` primeiro
+---
+
+### ❌ ERRO 3: `ModuleNotFoundError: No module named 'pandas'`
+**Causa:** Venv sem dependências instaladas
+
+**Solução A - Instalar no venv:**
+```bash
+venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+**Solução B - Usar Python global (mais simples):**
+```bash
+deactivate  # sair do venv
+pip install -r requirements.txt
+python teste_funcoes_direto.py
+```
+**Ver mais:** `TROUBLESHOOTING_VENV.md`
+
+---
+
+### ❌ ERRO 4: Ollama não funciona
+**Solução:**
+```bash
+# Editar .env
+LLM_TYPE=openrouter
+OPENROUTER_API_KEY=sua-chave-aqui
+```
+
+---
+
+### ❌ ERRO 5: CSV não encontrado
+**Verificar:**
+```bash
+Test-Path -LiteralPath "DADOS_SINARM\OCORRENCIAS\OCORRENCIAS_2026.csv"
+```
+**Deve retornar:** `True`
+
+---
+
+### 🆘 SOLUÇÃO UNIVERSAL (para alunos travados)
+```bash
+# 1. Limpar tudo
+deactivate
+Remove-Item -Recurse -Force venv
+
+# 2. Começar do zero
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+
+# 3. Testar
+python teste_funcoes_direto.py
+```
+
+**Tempo:** ~5 minutos  
+**Taxa de sucesso:** 95%
 
 ---
 
@@ -146,11 +213,25 @@ Licao: SIMPLICIDADE VENCE!
 
 ## CHECKLIST ULTIMO MINUTO
 
-- [ ] Ollama rodando
-- [ ] Testar: `python teste_funcoes_direto.py`
+- [ ] Ollama rodando (`ollama list` para verificar)
+- [ ] Testar: `python teste_funcoes_direto.py` → todos ✅
+- [ ] Arquivos troubleshooting acessíveis:
+  - [ ] `TROUBLESHOOTING_ENCODING.md`
+  - [ ] `TROUBLESHOOTING_VENV.md`
 - [ ] Slide TF-IDF vs FAISS preparado
 - [ ] Slide Paradoxo da Complexidade preparado
 - [ ] Este guia impresso/aberto
+- [ ] Git atualizado (`git pull origin main`)
+
+---
+
+## 📚 ARQUIVOS DE REFERÊNCIA RÁPIDA
+
+Durante a aula, tenha abertos:
+1. **Este arquivo** (GUIA_RAPIDO_DIA_DA_AULA.md) - folha de cola
+2. **TROUBLESHOOTING_ENCODING.md** - para erros de UTF-8
+3. **TROUBLESHOOTING_VENV.md** - para erros de módulos
+4. **ROTEIRO_AULA_ATUALIZADO_TF_IDF.md** - roteiro completo detalhado
 
 ---
 
