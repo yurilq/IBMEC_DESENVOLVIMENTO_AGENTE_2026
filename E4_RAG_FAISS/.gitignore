@@ -9,6 +9,9 @@
 .env
 *.env
 !.env.example
+*_API_KEY*
+*.key
+secrets/
 
 # ────────────────────────────────────────────────────────────────────────────
 # AMBIENTE VIRTUAL PYTHON
@@ -75,3 +78,35 @@ htmlcov/
 *.temp
 *.bak
 *.backup
+
+# ────────────────────────────────────────────────────────────────────────────
+# MATERIAL DO PROFESSOR (NÃO COMPARTILHAR COM ALUNOS)
+# ────────────────────────────────────────────────────────────────────────────
+# Análises e documentação interna
+ANALISE_*.md
+EXECUCAO_*.md
+TESTE_*.md
+RESUMO_EXECUTIVO*.md
+CORRECAO_*.md
+ATUALIZACAO_*.md
+
+# Justificativas e roteiros do professor
+JUSTIFICATIVA_*.md
+ROTEIRO_*ATUALIZADO*.md
+GUIA_RAPIDO_DIA_DA_AULA.md
+
+# Scripts de teste do professor
+teste_*.py
+demo_*.py
+
+# Notas e preparação de aula
+NOTAS_PROFESSOR*.md
+PREPARACAO_*.md
+*_PROFESSOR*.md
+*_INTERNO*.md
+
+# Gabaritos e soluções
+GABARITO*.md
+SOLUCAO*.md
+*_SOLUCAO*.py
+*_RESPOSTA*.md

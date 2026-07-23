@@ -202,7 +202,7 @@ OLLAMA_BASE_URL=http://localhost:11434
 OLLAMA_TIMEOUT=120
 
 # OpenRouter (se LLM_TYPE=openrouter)
-OPENROUTER_API_KEY=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
+OPENROUTER_API_KEY=sk-or-v1-SUA_CHAVE_AQUI
 OPENROUTER_MODEL=openai/gpt-4o-mini
 
 # Parâmetros gerais
