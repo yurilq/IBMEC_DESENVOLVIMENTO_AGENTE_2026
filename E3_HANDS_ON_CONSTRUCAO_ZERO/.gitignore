@@ -1,0 +1,75 @@
+﻿# ========================================
+# PYTHON
+# ========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Ambientes Virtuais
+venv/
+env/
+ENV/
+.venv
+01_GUIAS_ALUNO/**/venv/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*-checkpoint.ipynb
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ========================================
+# MATERIAL DO DOCENTE (NÃO COMPARTILHAR)
+# ========================================
+
+# Scripts auxiliares de desenvolvimento (02_NOTEBOOK)
+02_NOTEBOOK_PASSO_A_PASSO/adicionar_*.py
+02_NOTEBOOK_PASSO_A_PASSO/atualizar_*.py
+02_NOTEBOOK_PASSO_A_PASSO/corrigir_*.py
+02_NOTEBOOK_PASSO_A_PASSO/diagnosticar_*.py
+02_NOTEBOOK_PASSO_A_PASSO/gerar_*.py
+02_NOTEBOOK_PASSO_A_PASSO/remover_*.py
+02_NOTEBOOK_PASSO_A_PASSO/validar_*.py
+02_NOTEBOOK_PASSO_A_PASSO/verificar_*.py
+02_NOTEBOOK_PASSO_A_PASSO/analisar_*.py
+
+# Scripts de teste do docente (03_AGENTE)
+03_AGENTE_CONSOLIDADO/teste_*.py
+03_AGENTE_CONSOLIDADO/verificar_*.py
+03_AGENTE_CONSOLIDADO/verificacao_*.py
+03_AGENTE_CONSOLIDADO/analisar_*.py
+03_AGENTE_CONSOLIDADO/testar_*.py
+
+# Relatórios e documentação interna (02_NOTEBOOK)
+02_NOTEBOOK_PASSO_A_PASSO/CORRECAO_*.md
+02_NOTEBOOK_PASSO_A_PASSO/RELATORIO_*.txt
+02_NOTEBOOK_PASSO_A_PASSO/RESUMO_*.txt
+
+# Relatórios e documentação interna (03_AGENTE)
+03_AGENTE_CONSOLIDADO/RESUMO_*.txt
+03_AGENTE_CONSOLIDADO/NOVA_FUNCIONALIDADE_*.txt
+
+# Documentação interna (raiz)
+PADRAO_DESENVOLVIMENTO_IBMEC.txt
+PADRAO_IBMEC_RESUMO_EXECUTIVO.txt
+RELATORIO_FINAL_COMPLETO.txt
+NOVO_FORMATO_SAIDA.md
+PLANO_LIMPEZA.md
+
+# Backups
+*_BACKUP.*
+*.bak
+
+# Pastas privadas
+_PROFESSORES/
+
+# Logs e temporários
+*.log
+04_MATERIAL_APOIO/output.txt

@@ -1,0 +1,498 @@
+# RAG - Retrieval-Augmented Generation
+
+## O que é RAG?
+
+RAG (Retrieval-Augmented Generation) é uma técnica que combina busca de informações (retrieval) com geração de texto por IA, permitindo que modelos de linguagem respondam perguntas baseadas em documentos específicos.
+
+## Como Funciona?
+
+### 1. Indexação (Offline)
+```
+Documentos → Chunks → Embeddings → Banco Vetorial
+```
+
+**Etapas:**
+1. **Carregar Documentos**: Ler arquivos de texto
+2. **Dividir em Chunks**: Quebrar em pedaços menores (200-500 tokens)
+3. **Gerar Embeddings**: Converter texto em vetores numéricos
+4. **Armazenar**: Salvar em banco vetorial (FAISS, Pinecone, etc.)
+
+### 2. Busca (Online)
+```
+Pergunta → Embedding → Busca Similaridade → Documentos Relevantes
+```
+
+**Etapas:**
+1. **Receber Pergunta**: Usuário faz uma pergunta
+2. **Gerar Embedding**: Converter pergunta em vetor
+3. **Buscar Similaridade**: Encontrar documentos mais próximos
+4. **Retornar Top-K**: Devolver os K documentos mais relevantes
+
+### 3. Geração (Online)
+```
+Pergunta + Documentos → LLM → Resposta
+```
+
+**Etapas:**
+1. **Montar Contexto**: Juntar pergunta + documentos relevantes
+2. **Enviar para LLM**: Passar contexto para modelo de linguagem
+3. **Gerar Resposta**: LLM responde baseado no contexto
+4. **Retornar**: Devolver resposta ao usuário
+
+## Embeddings
+
+### O que são?
+Embeddings são representações numéricas de texto em espaço vetorial de alta dimensão (geralmente 384, 768 ou 1536 dimensões).
+
+### Como Funcionam?
+- Textos similares têm vetores próximos
+- Distância entre vetores = similaridade semântica
+- Captura significado, não apenas palavras
+
+### Exemplo
+```
+"cachorro" → [0.2, 0.5, 0.1, ..., 0.3]  (384 números)
+"cão"      → [0.21, 0.49, 0.11, ..., 0.29]  (muito próximo!)
+"gato"     → [0.19, 0.48, 0.09, ..., 0.31]  (próximo, mas diferente)
+"carro"    → [0.8, 0.1, 0.9, ..., 0.2]  (distante!)
+```
+
+### Modelos de Embedding
+
+**Populares:**
+- **Sentence-BERT**: 384 dimensões, rápido
+- **OpenAI Ada-002**: 1536 dimensões, preciso
+- **Cohere Embed**: 768 dimensões, multilíngue
+- **TF-IDF**: Clássico, baseado em frequência
+
+**Para Português:**
+- **BERTimbau**: BERT treinado em português
+- **mBERT**: Multilíngue, inclui português
+- **Sentence-BERT Portuguese**: Otimizado para PT-BR
+
+## Bancos Vetoriais
+
+### FAISS (Facebook AI Similarity Search)
+**Características:**
+- Desenvolvido pelo Facebook
+- Extremamente rápido
+- Funciona em memória ou disco
+- Gratuito e open-source
+
+**Vantagens:**
+- Performance excelente
+- Fácil de usar
+- Não requer servidor externo
+
+**Desvantagens:**
+- Apenas busca (não é banco de dados completo)
+- Requer gerenciamento manual de índices
+
+### Pinecone
+**Características:**
+- Serviço em nuvem
+- Gerenciado (managed)
+- Escalável
+
+**Vantagens:**
+- Fácil de usar
+- Escalabilidade automática
+- Backup automático
+
+**Desvantagens:**
+- Pago (após tier gratuito)
+- Requer internet
+
+### Chroma
+**Características:**
+- Open-source
+- Fácil integração com LangChain
+- Persistência em disco
+
+**Vantagens:**
+- Simples de usar
+- Gratuito
+- Boa documentação
+
+**Desvantagens:**
+- Menos otimizado que FAISS
+- Comunidade menor
+
+### Weaviate
+**Características:**
+- Open-source
+- GraphQL API
+- Suporta múltiplos modelos
+
+**Vantagens:**
+- Muito flexível
+- Boa performance
+- Recursos avançados
+
+**Desvantagens:**
+- Mais complexo
+- Requer servidor
+
+## Métricas de Similaridade
+
+### Similaridade de Cosseno
+```python
+similarity = cos(θ) = (A · B) / (||A|| × ||B||)
+```
+- Varia de -1 a 1
+- 1 = idênticos
+- 0 = ortogonais
+- -1 = opostos
+
+**Mais comum em RAG!**
+
+### Distância Euclidiana
+```python
+distance = √(Σ(ai - bi)²)
+```
+- Distância geométrica
+- Menor = mais similar
+- Sensível a magnitude
+
+### Produto Interno (Dot Product)
+```python
+similarity = A · B = Σ(ai × bi)
+```
+- Rápido de calcular
+- Considera magnitude
+- Usado em FAISS
+
+## Chunking (Divisão de Documentos)
+
+### Por que Dividir?
+- Documentos longos são difíceis de processar
+- Embeddings capturam melhor textos curtos
+- Busca mais precisa
+
+### Estratégias
+
+**1. Tamanho Fixo**
+```python
+chunks = [doc[i:i+500] for i in range(0, len(doc), 500)]
+```
+- Simples
+- Pode quebrar no meio de frases
+
+**2. Por Sentença**
+```python
+chunks = doc.split('. ')
+```
+- Respeita estrutura
+- Tamanhos variáveis
+
+**3. Recursivo**
+```python
+# Tenta quebrar por parágrafo, depois sentença, depois palavra
+```
+- Mais inteligente
+- Usado em LangChain
+
+**4. Semântico**
+```python
+# Quebra quando significado muda
+```
+- Mais preciso
+- Mais complexo
+
+### Tamanhos Recomendados
+- **Pequeno**: 100-200 tokens (perguntas curtas)
+- **Médio**: 200-500 tokens (balanceado)
+- **Grande**: 500-1000 tokens (contexto amplo)
+
+### Overlap
+```python
+chunks = [
+    doc[0:500],
+    doc[400:900],    # 100 tokens de overlap
+    doc[800:1300],
+]
+```
+- Evita perder contexto nas bordas
+- 10-20% de overlap é comum
+
+## Pipeline RAG Completo
+
+### Fase 1: Preparação (Offline)
+```python
+# 1. Carregar documentos
+docs = load_documents("pasta/")
+
+# 2. Dividir em chunks
+chunks = split_documents(docs, chunk_size=500)
+
+# 3. Gerar embeddings
+embeddings = model.encode(chunks)
+
+# 4. Criar índice
+index = faiss.IndexFlatL2(dimension)
+index.add(embeddings)
+
+# 5. Salvar
+faiss.write_index(index, "index.faiss")
+```
+
+### Fase 2: Busca (Online)
+```python
+# 1. Receber pergunta
+pergunta = "O que é calibre?"
+
+# 2. Gerar embedding da pergunta
+query_embedding = model.encode([pergunta])
+
+# 3. Buscar documentos similares
+distances, indices = index.search(query_embedding, k=3)
+
+# 4. Recuperar textos
+docs_relevantes = [chunks[i] for i in indices[0]]
+```
+
+### Fase 3: Geração (Online)
+```python
+# 1. Montar prompt
+prompt = f"""
+Contexto:
+{docs_relevantes[0]}
+{docs_relevantes[1]}
+{docs_relevantes[2]}
+
+Pergunta: {pergunta}
+
+Resposta:
+"""
+
+# 2. Enviar para LLM
+resposta = llm.generate(prompt)
+
+# 3. Retornar
+return resposta
+```
+
+## Vantagens do RAG
+
+### 1. Conhecimento Atualizado
+- Não precisa retreinar modelo
+- Adiciona novos documentos facilmente
+- Sempre usa informação mais recente
+
+### 2. Reduz Alucinações
+- LLM responde baseado em documentos reais
+- Menos chance de inventar informações
+- Pode citar fontes
+
+### 3. Domínio Específico
+- Funciona com documentos internos
+- Conhecimento especializado
+- Privacidade (dados não vão para treinamento)
+
+### 4. Custo
+- Mais barato que fine-tuning
+- Não precisa retreinar modelo
+- Escalável
+
+### 5. Transparência
+- Pode mostrar documentos usados
+- Auditável
+- Explicável
+
+## Desvantagens do RAG
+
+### 1. Latência
+- Busca + geração = mais lento
+- Requer infraestrutura adicional
+
+### 2. Qualidade da Busca
+- Depende de embeddings bons
+- Pode não encontrar documento relevante
+- Sensível a como pergunta é formulada
+
+### 3. Contexto Limitado
+- LLM tem limite de tokens
+- Pode não caber todos documentos relevantes
+- Precisa selecionar bem
+
+### 4. Complexidade
+- Mais componentes para gerenciar
+- Requer tuning (chunk size, k, etc.)
+- Debugging mais difícil
+
+## Casos de Uso
+
+### 1. Chatbots Corporativos
+- Responde perguntas sobre políticas internas
+- Usa manuais e documentos da empresa
+- Exemplo: RH, TI, Compliance
+
+### 2. Assistentes de Pesquisa
+- Busca em papers científicos
+- Resumo de artigos
+- Exemplo: PubMed, ArXiv
+
+### 3. Suporte Técnico
+- Responde perguntas sobre produtos
+- Usa manuais e FAQs
+- Exemplo: Documentação de software
+
+### 4. Legal/Jurídico
+- Busca em leis e jurisprudência
+- Análise de contratos
+- Exemplo: Assistente jurídico
+
+### 5. Análise de Documentos
+- Extração de informações
+- Resumos
+- Exemplo: Análise de relatórios
+
+## RAG no Contexto PCDF
+
+### Aplicação: Agente SINARM com RAG
+
+**Problema:**
+- Agente E3 só responde perguntas sobre dados estruturados (CSV)
+- Não responde perguntas conceituais ("O que é calibre?")
+
+**Solução:**
+- Adicionar RAG com documentos conceituais
+- Manter tools E3 para dados estruturados
+- Roteador decide: tool ou RAG?
+
+**Arquitetura:**
+```
+Pergunta
+   ↓
+Roteador
+   ↓
+   ├─→ Pergunta sobre dados? → Tools E3 → Resposta
+   └─→ Pergunta conceitual? → RAG → Resposta
+```
+
+**Documentos:**
+- calibres_armas.txt
+- marcas_armas.txt
+- tipos_armas.txt
+- sistema_sinarm.txt
+
+**Exemplo:**
+```
+Pergunta: "Quantas armas Taurus existem?"
+→ Roteador: dados estruturados
+→ Tool: contar_armas_marca("TAURUS")
+→ Resposta: "Encontrei 45.234 armas Taurus"
+
+Pergunta: "O que é calibre?"
+→ Roteador: conceitual
+→ RAG: busca em calibres_armas.txt
+→ Resposta: "Calibre é a medida do diâmetro interno..."
+```
+
+## Implementação Simples (TF-IDF)
+
+### Vantagens
+- Não requer modelo de embedding
+- Rápido
+- Funciona bem para português
+- Sem dependências pesadas
+
+### Código
+```python
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+# 1. Criar vetorizador
+vectorizer = TfidfVectorizer()
+
+# 2. Treinar com documentos
+tfidf_matrix = vectorizer.fit_transform(documentos)
+
+# 3. Buscar
+query_vec = vectorizer.transform([pergunta])
+similarities = cosine_similarity(query_vec, tfidf_matrix)
+
+# 4. Top-K
+top_k = similarities.argsort()[0][-3:][::-1]
+```
+
+## Implementação Avançada (Sentence-BERT)
+
+### Vantagens
+- Embeddings semânticos
+- Melhor qualidade
+- Multilíngue
+
+### Código
+```python
+from sentence_transformers import SentenceTransformer
+
+# 1. Carregar modelo
+model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
+
+# 2. Gerar embeddings
+doc_embeddings = model.encode(documentos)
+
+# 3. Buscar
+query_embedding = model.encode([pergunta])
+similarities = cosine_similarity(query_embedding, doc_embeddings)
+
+# 4. Top-K
+top_k = similarities.argsort()[0][-3:][::-1]
+```
+
+## Boas Práticas
+
+### 1. Chunk Size
+- Teste diferentes tamanhos
+- 200-500 tokens é um bom começo
+- Considere overlap de 10-20%
+
+### 2. Top-K
+- Comece com k=3
+- Aumente se respostas incompletas
+- Diminua se muito contexto irrelevante
+
+### 3. Pré-processamento
+- Remova formatação desnecessária
+- Normalize texto (lowercase, acentos)
+- Remova stop words (opcional)
+
+### 4. Avaliação
+- Teste com perguntas reais
+- Meça precisão da busca
+- Avalie qualidade das respostas
+
+### 5. Monitoramento
+- Log de perguntas
+- Feedback dos usuários
+- Análise de falhas
+
+## Recursos
+
+### Bibliotecas
+- **LangChain**: Framework completo para RAG
+- **LlamaIndex**: Focado em indexação
+- **FAISS**: Busca vetorial
+- **Sentence-Transformers**: Embeddings
+
+### Modelos
+- **OpenAI Embeddings**: Pagos, alta qualidade
+- **Sentence-BERT**: Gratuito, boa qualidade
+- **Cohere**: Pagos, multilíngue
+
+### Tutoriais
+- LangChain RAG Tutorial
+- FAISS Documentation
+- Pinecone Guides
+
+## Conclusão
+
+RAG é uma técnica poderosa para adicionar conhecimento específico a LLMs sem retreinamento. É especialmente útil para:
+
+- Documentos internos
+- Conhecimento atualizado
+- Domínios específicos
+- Redução de alucinações
+
+No contexto do E4, usamos RAG para adicionar conhecimento conceitual ao agente SINARM, mantendo as tools E3 para dados estruturados.

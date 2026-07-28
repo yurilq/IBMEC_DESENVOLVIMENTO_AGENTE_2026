@@ -1,0 +1,104 @@
+# ============================================================================
+# REQUIREMENTS.TXT - E5 ESPECIALIZAÇÃO PDFs
+# MBA IA Generativa PCDF - IBMEC
+# ============================================================================
+
+# ============================================================================
+# CORE (Obrigatório)
+# ============================================================================
+
+# Manipulação de dados
+pandas>=2.0.0
+numpy>=1.24.0
+
+# LangChain
+langchain-core>=0.1.0
+
+# Machine Learning
+scikit-learn>=1.3.0
+
+# ============================================================================
+# RAG ESPECIALIZADO (Obrigatório para E5)
+# ============================================================================
+
+# FAISS - Busca vetorial rápida
+faiss-cpu>=1.7.4
+# Para GPU (opcional): faiss-gpu>=1.7.4
+
+# Sentence Transformers - Embeddings semânticos
+sentence-transformers>=2.2.0
+
+# PDF Processing
+PyPDF2>=3.0.0
+# Alternativa: pypdf>=3.0.0
+
+# ============================================================================
+# RERANKING (Opcional mas recomendado)
+# ============================================================================
+
+# CrossEncoder para reranking
+# Já incluído em sentence-transformers
+
+# ============================================================================
+# FINE-TUNING LoRA (Opcional - Google Colab)
+# ============================================================================
+
+# Transformers - Modelos de linguagem
+# transformers>=4.30.0
+
+# PEFT - Parameter-Efficient Fine-Tuning
+# peft>=0.4.0
+
+# Datasets - Preparação de dados
+# datasets>=2.12.0
+
+# Accelerate - Treinamento otimizado
+# accelerate>=0.20.0
+
+# ============================================================================
+# UTILIDADES
+# ============================================================================
+
+# Progress bars
+tqdm>=4.65.0
+
+# Logging
+python-dotenv>=1.0.0
+
+# ============================================================================
+# JUPYTER (Opcional - para notebooks)
+# ============================================================================
+
+# jupyter>=1.0.0
+# ipykernel>=6.23.0
+# ipywidgets>=8.0.0
+
+# ============================================================================
+# NOTAS
+# ============================================================================
+
+# 1. FAISS:
+#    - faiss-cpu: Para CPU (mais compatível)
+#    - faiss-gpu: Para GPU (requer CUDA)
+#
+# 2. Fine-tuning:
+#    - Comentado por padrão (usar Google Colab)
+#    - Descomentar se quiser treinar localmente
+#
+# 3. Jupyter:
+#    - Comentado por padrão
+#    - Descomentar se não tiver instalado
+#
+# 4. Instalação:
+#    pip install -r requirements.txt
+#
+# 5. Atualização:
+#    pip install --upgrade -r requirements.txt
+
+# ============================================================================
+# VERSÕES TESTADAS
+# ============================================================================
+
+# Python: 3.10+
+# Sistema: Windows 11, Ubuntu 22.04, macOS 13+
+# Data: 26/07/2026

@@ -1,0 +1,13 @@
+# Dependências do Agente SINARM v1.0
+# E3 - Construção do Agente do Zero
+
+# LangChain
+langchain==0.3.13
+langchain-core==0.3.28
+langchain-ollama==0.2.2
+
+# Data
+pandas==2.2.3
+
+# Utilities
+python-dotenv==1.0.1

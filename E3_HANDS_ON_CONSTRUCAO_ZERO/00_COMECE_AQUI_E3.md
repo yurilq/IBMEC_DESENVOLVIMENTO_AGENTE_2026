@@ -8,13 +8,12 @@
 
 ## 📖 INÍCIO RÁPIDO
 
-### 👨‍🏫 Para Professores:
-**⭐ NOVO:** [QUICK_START_PROFESSOR.md](QUICK_START_PROFESSOR.md) - Checklist rápido 1 página  
-Ou veja: [ROTEIRO_COMPLETO_E3.md](ROTEIRO_COMPLETO_E3.md) - Timeline detalhada
-
 ### 👨‍🎓 Para Alunos:
 1. Execute `python verificar_ambiente.py`
 2. Siga os guias em ordem: [01_GUIAS_ALUNO/](01_GUIAS_ALUNO/)
+
+### 👨‍🏫 Para Professores:
+📁 Material confidencial em: `../_PROFESSORES/E3_MATERIAL_PROFESSOR/`
 
 ---
 
@@ -40,12 +39,25 @@ Material atualizado para LangChain 1.3+ (sem `initialize_agent`)
 **IMPORTANTE:** Esta pasta contém MATERIAL DE REFERÊNCIA.  
 Você vai trabalhar em uma **PASTA SEPARADA** que você criará.
 
-📖 **Leia antes de começar:** [ESTRUTURA_PASTAS_E3.md](ESTRUTURA_PASTAS_E3.md)
-
 **Resumo rápido:**
-- ✅ **Esta pasta** = Material para consultar (guias, templates, exemplos)
+- ✅ **Esta pasta** = Material para consultar (guias, conceitos, FAQ)
 - ✅ **Sua pasta de trabalho** = Onde você criará arquivos .py e colocará CSV
 - ⚠️ NÃO trabalhe dentro desta pasta E3_HANDS_ON_CONSTRUCAO_ZERO!
+
+**Como criar sua pasta de trabalho:**
+```bash
+# Crie uma pasta fora do Git
+mkdir meu_agente_sinarm
+cd meu_agente_sinarm
+
+# Crie ambiente virtual
+python -m venv venv
+venv\Scripts\activate  # Windows
+# source venv/bin/activate  # Linux/Mac
+
+# Instale dependências
+pip install langchain langchain-ollama pandas
+```
 
 ---
 

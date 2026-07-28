@@ -1,6 +1,11 @@
-# AGENTE INVESTIGADOR SINARM - .gitignore
+# ============================================================================
+# GITIGNORE - CODIGOS_AULA
+# MBA IA Generativa PCDF - IBMEC
+# ============================================================================
 
-# ========== PYTHON ==========
+# ============================================================================
+# PYTHON
+# ============================================================================
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -24,7 +29,6 @@ parts/
 sdist/
 var/
 wheels/
-pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
 .installed.cfg
@@ -52,6 +56,7 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
+cover/
 
 # Translations
 *.mo
@@ -74,6 +79,7 @@ instance/
 docs/_build/
 
 # PyBuilder
+.pybuilder/
 target/
 
 # Jupyter Notebook
@@ -88,6 +94,12 @@ ipython_config.py
 
 # pipenv
 Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
 
 # PEP 582
 __pypackages__/
@@ -126,30 +138,15 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# ========== PROJETO ESPECÍFICO ==========
+# pytype static type analyzer
+.pytype/
 
-# Logs do agente
-logs/
-*.log
+# Cython debug symbols
+cython_debug/
 
-# Arquivos temporários
-temp/
-tmp/
-*.tmp
-
-# Arquivos de backup
-*.bak
-*.swp
-*~
-
-# Arquivos compactados (exceto se forem parte do projeto)
-codigos corrigidos.zip
-
-# Configurações locais
-.env.local
-config.local.py
-
-# ========== IDE / EDITOR ==========
+# ============================================================================
+# IDEs e EDITORES
+# ============================================================================
 
 # VSCode
 .vscode/
@@ -158,6 +155,8 @@ config.local.py
 # PyCharm
 .idea/
 *.iml
+*.iws
+*.ipr
 
 # Sublime Text
 *.sublime-project
@@ -167,97 +166,221 @@ config.local.py
 *.swp
 *.swo
 *~
+.netrwhist
 
 # Emacs
 *~
 \#*\#
 .\#*
 
-# ========== OS ==========
+# Eclipse
+.project
+.pydevproject
+.settings/
 
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-*.lnk
+# ============================================================================
+# SISTEMA OPERACIONAL
+# ============================================================================
 
 # macOS
 .DS_Store
 .AppleDouble
 .LSOverride
-Icon
 ._*
-.Spotlight-V100
-.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
 
 # Linux
 *~
 .directory
 .Trash-*
 
-# ========== DADOS SENSÍVEIS ==========
+# ============================================================================
+# LOGS e TEMPORÁRIOS
+# ============================================================================
 
-# NÃO IGNORAR: Os CSVs do SINARM fazem parte do projeto
-# DADOS_SINARM/  # <-- NÃO descomente essa linha
+# Logs
+*.log
+logs/
+*.tmp
+*.temp
 
-# Mas ignore possíveis arquivos de dados pessoais/temporários
-*.xlsx
-*.xls
-dados_pessoais/
-dados_teste/
+# Backups
+*.bak
+*.backup
+*_old/
+*_antigo/
+*_backup/
+*.orig
 
-# ========== ARQUIVOS DE PROFESSOR (NÃO COMPARTILHAR COM ALUNOS) ==========
+# ============================================================================
+# DADOS SENSÍVEIS
+# ============================================================================
 
-# Pasta interna completa
+# Dados pessoais (LGPD)
+*_dados_reais.csv
+*_dados_pessoais.*
+*_cpf.*
+*_rg.*
+
+# Credenciais
+.env
+.env.local
+.env.*.local
+secrets.json
+credentials.json
+*.key
+*.pem
+*.p12
+
+# Configurações locais
+config.local.json
+settings.local.py
+
+# ============================================================================
+# MATERIAL DO PROFESSOR (NÃO COMPARTILHAR COM ALUNOS)
+# ============================================================================
+
+# Pasta de professores
+_PROFESSORES/
 _INTERNO/
+_GABARITOS/
+_SOLUCOES/
 
-# Pastas internas dos encontros
-E1_ANATOMIA_DO_AGENTE/_INTERNO_PROFESSOR/
-E2_QUALIDADE_E_MEMORIA/_INTERNO_PROFESSOR/
-E3_HANDS_ON_CONSTRUCAO_ZERO/_INTERNO_PROFESSOR/
+# Gabaritos
+*_gabarito.*
+*_solucao.*
+*_resposta.*
 
-# Arquivos de planejamento/roteiro do professor
-*ROTEIRO_PROFESSOR*
-*ROTEIRO_TERCA*
-*ROTEIRO_QUINTA*
-*PLANEJAMENTO_PROFESSOR*
-*GABARITO*
-*SOLUCAO_PROFESSOR*
+# Planos de aula com anotações
+*_anotacoes_professor.*
+*_notas_docente.*
 
-# Relatórios e análises internas
-*RELATORIO_TESTES*
-*CONCLUSAO_ESTRUTURACAO*
-*CONFIRMACAO_FINAL*
-*RESUMO_ESTRUTURACAO*
-*SCRIPTS_AUTOMATIZADOS_RESUMO*
+# ============================================================================
+# DADOS GRANDES
+# ============================================================================
 
-# Versões antigas (backup professor)
-_versoes_antigas/
-versoes_antigas/
-backup/
+# CSVs grandes (comentar se precisar versionar)
+# *.csv
+# *.xlsx
+# *.xls
 
-# Scripts de teste do professor
-TESTAR_*.py
-VALIDACAO_*.py
-VERIFICAR_PRIVACIDADE.py
-RELATORIO_VALIDACAO.md
-CONFIGURACAO_PRIVACIDADE.md
-PRIVACIDADE_CONFIGURADA.md
-CONTEXTO_LIMPO.md
+# Bancos de dados
+*.db
+*.sqlite
+*.sqlite3
 
-# Notas e anotações do professor
-NOTAS_PROFESSOR*
-ANOTACOES*
-TODO_PROFESSOR*
+# Arquivos grandes
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
 
-# ========== OUTROS ==========
+# ============================================================================
+# MODELOS E EMBEDDINGS
+# ============================================================================
 
-# Node (caso adicione frontend no futuro)
+# Modelos treinados
+*.pkl
+*.pickle
+*.h5
+*.pt
+*.pth
+*.onnx
+
+# Embeddings
+embeddings/
+*.npy
+*.npz
+
+# FAISS indices
+*.faiss
+*.index
+
+# ============================================================================
+# JUPYTER
+# ============================================================================
+
+# Checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Notebooks temporários
+*-checkpoint.ipynb
+*_temp.ipynb
+*_test.ipynb
+
+# Notebooks específicos E5 (não versionar)
+E5_ESPECIALIZACAO_PDFS/02_NOTEBOOK_PASSO_A_PASSO/E5_especializacao_pdfs.ipynb
+
+# Roteiros detalhados do professor (não versionar)
+E5_ESPECIALIZACAO_PDFS/04_MATERIAL_APOIO/ROTEIRO_PROFESSOR_DETALHADO.md
+
+# ============================================================================
+# TESTES
+# ============================================================================
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Tox
+.tox/
+
+# ============================================================================
+# DOCUMENTAÇÃO
+# ============================================================================
+
+# Builds de documentação
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# ============================================================================
+# OUTROS
+# ============================================================================
+
+# Node (se houver frontend)
 node_modules/
-package-lock.json
-yarn.lock
+npm-debug.log
+yarn-error.log
 
-# Documentação gerada
-docs/build/
-E3_HANDS_ON_CONSTRUCAO_ZERO/ROTEIRO_COMPLETO_E3.md
+# Docker
+.dockerignore
+
+# Git
+*.orig
+*.rej
+
+# ============================================================================
+# EXCEÇÕES (FORÇAR INCLUSÃO)
+# ============================================================================
+
+# Incluir requirements.txt
+!requirements.txt
+
+# Incluir README.md
+!README.md
+!*/README.md
+
+# Incluir .gitkeep para pastas vazias
+!.gitkeep
+
+# Incluir dados de exemplo (pequenos)
+!*_exemplo.csv
+!*_sample.csv
+!*_demo.csv
+
+# ============================================================================
+# FIM
+# ============================================================================
