@@ -1,0 +1,343 @@
+# Sistema SINARM - Sistema Nacional de Armas
+
+## O que é o SINARM?
+
+O SINARM (Sistema Nacional de Armas) é um banco de dados nacional criado pela Lei nº 10.826/2003 (Estatuto do Desarmamento) para registrar e controlar armas de fogo em todo o território brasileiro.
+
+## Histórico
+
+### Criação
+- **Lei 10.826/2003**: Estatuto do Desarmamento
+- **Data**: 22 de dezembro de 2003
+- **Órgão Gestor**: Polícia Federal
+- **Objetivo**: Controle e rastreamento de armas de fogo
+
+### Evolução
+- **2003**: Criação do SINARM
+- **2005**: Campanha do Desarmamento
+- **2008**: Integração com polícias estaduais
+- **2019**: Lei 13.870 (flexibilização CAC)
+- **2021**: Decretos presidenciais (novas regras CAC)
+- **2023**: 20 anos do Estatuto do Desarmamento
+
+## Estrutura do SINARM
+
+### Dados Registrados
+
+**Informações da Arma**
+- Marca e modelo
+- Calibre
+- Número de série
+- Tipo (pistola, revólver, espingarda, rifle)
+- Espécie (uso permitido, restrito, proibido)
+- País de origem
+- Ano de fabricação
+
+**Informações do Proprietário**
+- Nome completo
+- CPF
+- Endereço
+- Profissão
+- Categoria (civil, policial, militar, CAC)
+
+**Informações de Registro**
+- Data de registro
+- Órgão emissor
+- Número do CR (Certificado de Registro)
+- Validade do registro
+- Renovações
+
+**Histórico da Arma**
+- Transferências de propriedade
+- Mudanças de endereço
+- Ocorrências policiais
+- Apreensões
+- Destruições
+
+### Categorias de Registro
+
+**1. Uso Permitido**
+- Armas de calibre permitido (.22, .32, .38, 9mm, 12)
+- Registro para civis
+- Porte restrito
+
+**2. Uso Restrito**
+- Armas de calibres restritos (.40, .45, .357 Magnum)
+- Uso exclusivo de forças de segurança
+- Porte autorizado
+
+**3. Uso Proibido**
+- Armas automáticas
+- Armas de guerra
+- Uso exclusivo militar
+
+## Tipos de Ocorrências no SINARM
+
+### Furto
+- Arma subtraída sem violência
+- Proprietário não estava presente
+- Registro de Boletim de Ocorrência obrigatório
+- Arma marcada como "furtada" no sistema
+
+### Roubo
+- Arma subtraída com violência ou ameaça
+- Proprietário presente durante o crime
+- Registro de BO obrigatório
+- Arma marcada como "roubada" no sistema
+
+### Apreensão
+- Arma recolhida pela polícia
+- Motivos: porte ilegal, crime, vencimento de registro
+- Arma fica sob custódia policial
+- Pode ser devolvida ou destruída
+
+### Perda
+- Arma perdida pelo proprietário
+- Registro de BO obrigatório
+- Arma marcada como "perdida" no sistema
+
+### Transferência
+- Mudança de proprietário
+- Requer autorização da Polícia Federal
+- Atualização de dados no SINARM
+
+### Destruição
+- Arma inutilizada
+- Motivos: apreensão definitiva, entrega voluntária
+- Baixa no sistema
+
+## Integração com Outros Sistemas
+
+### Sistemas Policiais
+- **INFOSEG**: Sistema de Informações de Segurança Pública
+- **REDS**: Rede de Integração Nacional de Informações de Segurança Pública
+- **Sistemas Estaduais**: Integração com polícias civis e militares
+
+### Dados Compartilhados
+- Armas roubadas/furtadas
+- Mandados de busca e apreensão
+- Investigações em andamento
+- Estatísticas criminais
+
+## Consultas no SINARM
+
+### Quem Pode Consultar?
+- Polícia Federal
+- Polícias Civis estaduais
+- Polícias Militares
+- Forças Armadas
+- Ministério Público
+- Poder Judiciário
+
+### Tipos de Consulta
+
+**Por Número de Série**
+- Verifica situação da arma
+- Histórico de proprietários
+- Ocorrências registradas
+
+**Por CPF do Proprietário**
+- Lista todas as armas registradas
+- Verifica regularidade
+- Histórico de registros
+
+**Por Marca/Modelo/Calibre**
+- Estatísticas
+- Análise de padrões
+- Investigações
+
+**Por Ocorrência**
+- Armas roubadas/furtadas
+- Armas apreendidas
+- Armas procuradas
+
+## Estatísticas do SINARM
+
+### Dados Nacionais (estimativas)
+- **Armas Registradas**: ~8 milhões
+- **Proprietários**: ~3 milhões
+- **CACs**: ~700 mil
+- **Armas Irregulares**: ~15 milhões (estimativa)
+
+### Distribuição por Tipo
+- **Revólveres**: 45%
+- **Pistolas**: 35%
+- **Espingardas**: 15%
+- **Rifles**: 5%
+
+### Calibres Mais Comuns
+1. .38 Special (30%)
+2. 9mm (25%)
+3. .380 ACP (15%)
+4. 12 Gauge (10%)
+5. .22 LR (8%)
+6. Outros (12%)
+
+### Marcas Mais Registradas
+1. Taurus (60%)
+2. Rossi (15%)
+3. CBC (8%)
+4. Glock (5%)
+5. Beretta (3%)
+6. Outras (9%)
+
+## Legislação Relacionada
+
+### Lei 10.826/2003 (Estatuto do Desarmamento)
+- Criação do SINARM
+- Requisitos para registro
+- Crimes relacionados a armas
+- Penalidades
+
+### Decreto 11.615/2023
+- Regulamenta o Estatuto
+- Define procedimentos
+- Atualiza regras CAC
+
+### Portarias da Polícia Federal
+- Procedimentos operacionais
+- Formulários e documentos
+- Prazos e taxas
+
+## Processo de Registro no SINARM
+
+### Documentos Necessários
+1. Documento de identidade
+2. CPF
+3. Comprovante de residência
+4. Certificado de capacidade técnica
+5. Certificado de aptidão psicológica
+6. Comprovante de idoneidade
+7. Nota fiscal da arma
+
+### Etapas
+1. **Solicitação**: Requerimento na Polícia Federal
+2. **Análise**: Verificação de requisitos
+3. **Vistoria**: Inspeção da arma
+4. **Cadastro**: Inclusão no SINARM
+5. **Emissão**: Certificado de Registro (CR)
+
+### Prazos
+- **Análise**: até 30 dias
+- **Validade do CR**: 10 anos (renovável)
+- **Renovação**: até 90 dias antes do vencimento
+
+### Custos (valores aproximados)
+- **Registro**: R$ 200
+- **Renovação**: R$ 100
+- **Transferência**: R$ 150
+- **Segunda via**: R$ 50
+
+## Aplicações na PCDF
+
+### Investigação Criminal
+- **Rastreamento**: Identificar origem de armas apreendidas
+- **Conexões**: Relacionar crimes por armas usadas
+- **Padrões**: Identificar rotas de tráfico
+- **Proprietários**: Investigar responsáveis
+
+### Análise Balística
+- **Comparação**: Projéteis e estojos
+- **Identificação**: Arma usada em crime
+- **Histórico**: Crimes anteriores com mesma arma
+- **Laudos**: Perícia técnica
+
+### Inteligência
+- **Estatísticas**: Padrões criminais
+- **Mapeamento**: Áreas de maior incidência
+- **Tendências**: Evolução temporal
+- **Prevenção**: Ações preventivas
+
+### Operações
+- **Mandados**: Busca e apreensão
+- **Verificação**: Situação de armas em campo
+- **Apreensões**: Registro imediato
+- **Devoluções**: Armas legais apreendidas
+
+## Desafios do SINARM
+
+### Armas Não Registradas
+- Estimativa de 15 milhões de armas irregulares
+- Dificuldade de rastreamento
+- Tráfico internacional
+- Armas antigas (pré-SINARM)
+
+### Integração de Dados
+- Sistemas estaduais diferentes
+- Dados incompletos
+- Atualizações lentas
+- Falta de padronização
+
+### Recursos
+- Falta de pessoal
+- Tecnologia defasada
+- Orçamento limitado
+- Treinamento insuficiente
+
+## Futuro do SINARM
+
+### Modernização
+- **Sistema Web**: Acesso online
+- **Mobile**: Aplicativos para consulta
+- **IA**: Análise preditiva
+- **Blockchain**: Rastreamento imutável
+
+### Integração
+- **Internacional**: Interpol, países vizinhos
+- **Outros Sistemas**: Detran, Receita Federal
+- **Tempo Real**: Atualizações instantâneas
+
+### Expansão
+- **Munições**: Controle de munições
+- **Componentes**: Rastreamento de peças
+- **Recarga**: Controle de recarregadores
+- **3D Printing**: Armas impressas
+
+## Casos de Uso
+
+### Exemplo 1: Arma Apreendida em Crime
+1. Policial apreende arma em flagrante
+2. Consulta número de série no SINARM
+3. Descobre que arma foi roubada em 2020
+4. Identifica proprietário original
+5. Investiga rota da arma até o criminoso
+
+### Exemplo 2: Investigação de Homicídio
+1. Projétil recuperado na cena do crime
+2. Perícia identifica calibre e características
+3. Comparação com banco de dados balístico
+4. Arma já usada em outro crime
+5. Consulta SINARM identifica proprietário
+
+### Exemplo 3: Operação de Desarmamento
+1. Campanha de entrega voluntária
+2. Cidadão entrega arma antiga
+3. Consulta SINARM verifica situação
+4. Arma estava irregular há 20 anos
+5. Baixa no sistema, arma destruída
+
+## Glossário
+
+- **CR**: Certificado de Registro
+- **CAC**: Colecionador, Atirador, Caçador
+- **BO**: Boletim de Ocorrência
+- **PF**: Polícia Federal
+- **INFOSEG**: Sistema de Informações de Segurança Pública
+- **REDS**: Rede de Integração Nacional
+- **Uso Permitido**: Armas de calibre permitido para civis
+- **Uso Restrito**: Armas de uso exclusivo de forças de segurança
+- **Uso Proibido**: Armas de uso exclusivo militar
+
+## Referências Legais
+
+- Lei 10.826/2003 (Estatuto do Desarmamento)
+- Decreto 11.615/2023
+- Portaria PF nº 1.222/2024
+- Instrução Normativa PF nº 193/2023
+
+## Contatos
+
+- **Polícia Federal**: 194
+- **SINARM**: sinarm@pf.gov.br
+- **Site**: www.gov.br/pf
+- **Consulta CR**: Sistema SINARM Online
