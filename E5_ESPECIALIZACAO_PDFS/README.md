@@ -109,21 +109,6 @@ python agente_v5_especializado.py --interativo
 - Implementar reranking
 - Testar e avaliar
 
-### QUINTA (5h)
-
-**TEORIA (1h30)**
-- LoRA (Low-Rank Adaptation) fundamentos
-- Hiperparâmetros (rank, alpha, learning rate)
-- Preparação de dataset
-- Treinamento em Google Colab
-
-**PRÁTICA (3h30)**
-- Preparar dataset de perguntas-respostas
-- Fine-tunar modelo com LoRA
-- Integrar no agente
-- Avaliar e comparar
-
----
 
 ## 🎓 CONCEITOS PRINCIPAIS
 
