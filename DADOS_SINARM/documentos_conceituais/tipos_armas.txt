@@ -1,0 +1,409 @@
+# Tipos de Armas de Fogo
+
+## Classificação Geral
+
+As armas de fogo são classificadas de acordo com diversos critérios: tamanho, mecanismo de disparo, uso, calibre e portabilidade.
+
+## Por Tamanho e Portabilidade
+
+### Armas Curtas (Handguns)
+Armas que podem ser operadas com uma mão, portáteis e de fácil ocultação.
+
+#### Pistolas
+**Características**
+- Carregador removível no cabo
+- Alimentação por carregador
+- Capacidade: 6 a 20 cartuchos (típico 15-17)
+- Mecanismo: semiautomático
+- Recarga rápida
+
+**Tipos de Pistolas**
+
+**1. Pistolas de Ação Simples (Single Action)**
+- Gatilho apenas solta o percussor
+- Requer engatilhar manualmente
+- Exemplo: Colt 1911
+- Gatilho mais leve e preciso
+
+**2. Pistolas de Ação Dupla (Double Action)**
+- Gatilho engatilha e solta o percussor
+- Primeiro disparo mais pesado
+- Exemplo: Beretta 92
+- Mais seguras para porte
+
+**3. Pistolas de Ação Dupla/Simples (DA/SA)**
+- Primeiro disparo em ação dupla
+- Disparos seguintes em ação simples
+- Exemplo: Taurus PT 92
+- Versatilidade
+
+**4. Pistolas Striker-Fired**
+- Percussor linear (sem martelo externo)
+- Gatilho consistente
+- Exemplo: Glock 17
+- Mais modernas e populares
+
+**Vantagens das Pistolas**
+- Alta capacidade de munição
+- Recarga rápida
+- Menor recuo (geralmente)
+- Manutenção simples
+- Precisão
+
+**Desvantagens**
+- Mais complexas mecanicamente
+- Podem emperrar (falha de alimentação)
+- Requerem mais treinamento
+- Sensíveis a sujeira
+
+#### Revólveres
+**Características**
+- Tambor rotativo com 5-8 câmaras
+- Alimentação manual ou speedloader
+- Capacidade: 5-8 cartuchos (típico 6)
+- Mecanismo: rotação do tambor
+- Recarga mais lenta
+
+**Tipos de Revólveres**
+
+**1. Ação Simples (Single Action)**
+- Requer engatilhar manualmente
+- Gatilho apenas solta o martelo
+- Exemplo: Colt Single Action Army
+- Gatilho muito leve
+- Uso histórico (Velho Oeste)
+
+**2. Ação Dupla (Double Action)**
+- Gatilho engatilha e dispara
+- Pode ser engatilhado manualmente
+- Exemplo: Smith & Wesson Model 10
+- Mais comum atualmente
+
+**3. Ação Dupla Apenas (DAO)**
+- Sem possibilidade de engatilhar
+- Sempre ação dupla
+- Exemplo: Taurus 85 DAO
+- Mais seguro para porte
+
+**Vantagens dos Revólveres**
+- Extremamente confiáveis
+- Não emperram
+- Simples de operar
+- Manutenção mínima
+- Podem disparar munição variada
+
+**Desvantagens**
+- Baixa capacidade
+- Recarga lenta
+- Mais pesados
+- Recuo maior (geralmente)
+
+### Armas Longas (Long Guns)
+Armas que requerem duas mãos para operação, maior alcance e precisão.
+
+#### Espingardas (Shotguns)
+**Características**
+- Cano liso (sem raias)
+- Dispara múltiplos projéteis (balins) ou slug
+- Calibres em gauge (12, 20, 36)
+- Alcance: 40-100 metros
+- Grande poder de parada
+
+**Tipos de Espingardas**
+
+**1. Basculante (Break-Action)**
+- Cano quebra para carregar
+- 1 ou 2 canos
+- Exemplo: Espingarda de caça tradicional
+- Simples e confiável
+
+**2. Pump-Action (Ação de Bomba)**
+- Carregamento manual por bombeamento
+- Capacidade: 5-8 cartuchos
+- Exemplo: Mossberg 500, Remington 870
+- Muito popular
+
+**3. Semiautomática**
+- Carregamento automático
+- Capacidade: 5-10 cartuchos
+- Exemplo: Benelli M4
+- Mais rápida
+
+**4. Automática**
+- Disparo contínuo
+- Uso militar
+- Exemplo: AA-12
+- Rara
+
+**Usos**
+- Defesa residencial
+- Caça
+- Policial (controle de distúrbios)
+- Esporte (tiro ao prato)
+
+#### Rifles
+**Características**
+- Cano raiado (precisão)
+- Dispara projétil único
+- Longo alcance (100-1000+ metros)
+- Alta precisão
+
+**Tipos de Rifles**
+
+**1. Rifle de Ferrolho (Bolt-Action)**
+- Ação manual
+- Capacidade: 3-10 cartuchos
+- Exemplo: Remington 700
+- Máxima precisão
+- Uso: caça, sniper
+
+**2. Rifle Semiautomático**
+- Ação automática
+- Capacidade: 10-30 cartuchos
+- Exemplo: AR-15, AK-47 (civil)
+- Uso: esporte, defesa
+
+**3. Rifle de Alavanca (Lever-Action)**
+- Ação manual por alavanca
+- Capacidade: 5-15 cartuchos
+- Exemplo: Winchester 1894
+- Uso histórico, caça
+
+**4. Rifle Automático (Fuzil)**
+- Disparo contínuo
+- Uso militar
+- Exemplo: M16, AK-47 (militar)
+- Restrito
+
+**Categorias por Uso**
+
+**Rifle de Caça**
+- Calibres médios (.308, .30-06)
+- Precisão
+- Alcance médio-longo
+
+**Rifle Esportivo**
+- .22 LR (mais comum)
+- Baixo recuo
+- Treinamento
+
+**Rifle Tático**
+- Calibres militares (5.56mm, 7.62mm)
+- Acessórios (miras, lanternas)
+- Uso policial/militar
+
+**Rifle de Precisão (Sniper)**
+- Calibres potentes (.308, .338, .50 BMG)
+- Longo alcance (1000+ metros)
+- Uso militar/policial
+
+#### Carabinas
+**Características**
+- Rifle de cano curto
+- Mais compacta e leve
+- Alcance médio (100-300 metros)
+- Intermediária entre pistola e rifle
+
+**Usos**
+- Defesa
+- Patrulha policial
+- Caça em mata fechada
+
+## Por Mecanismo de Disparo
+
+### Ação Manual
+- Requer ação manual para cada disparo
+- Exemplos: revólveres ação simples, rifles de ferrolho
+- Mais lentas, mais confiáveis
+
+### Semiautomática
+- Um disparo por acionamento do gatilho
+- Carregamento automático
+- Exemplos: pistolas, rifles semiautomáticos
+- Mais rápidas
+
+### Automática
+- Disparo contínuo enquanto gatilho pressionado
+- Uso militar
+- Exemplos: metralhadoras, fuzis automáticos
+- Restritas
+
+### Rajada (Burst)
+- 2-3 disparos por acionamento
+- Uso militar
+- Controle de munição
+
+## Por Uso
+
+### Uso Civil
+- Defesa pessoal
+- Esporte (tiro esportivo)
+- Caça
+- Coleção
+
+**Armas Permitidas**
+- Pistolas e revólveres calibres permitidos
+- Espingardas calibre 12, 20, 36
+- Rifles .22 LR
+- Carabinas calibres permitidos
+
+### Uso Policial
+- Patrulha
+- Investigação
+- Operações especiais
+- Controle de distúrbios
+
+**Armas Comuns**
+- Pistolas 9mm, .40 S&W
+- Revólveres .38 Special, .357 Magnum
+- Espingardas calibre 12
+- Carabinas 5.56mm
+- Rifles de precisão .308
+
+### Uso Militar
+- Combate
+- Defesa
+- Operações especiais
+- Treinamento
+
+**Armas Comuns**
+- Fuzis 5.56mm, 7.62mm
+- Pistolas .45 ACP, 9mm
+- Metralhadoras
+- Rifles de precisão
+- Lançadores
+
+## Armas Especiais
+
+### Submetralhadoras
+- Armas automáticas de calibre pistola
+- Compactas
+- Exemplo: MP5, UZI
+- Uso policial/militar
+
+### Metralhadoras
+- Armas automáticas de calibre rifle
+- Suporte ou veículo
+- Exemplo: M249, M2 Browning
+- Uso militar
+
+### Lançadores
+- Granada
+- Foguete
+- Uso militar
+
+## Classificação Legal Brasileira
+
+### Uso Permitido
+- Armas de calibre permitido
+- Registro para civis
+- Porte restrito
+
+**Exemplos**
+- Pistolas 9mm, .380 ACP
+- Revólveres .38 Special, .22 LR
+- Espingardas 12, 20, 36
+- Rifles .22 LR
+
+### Uso Restrito
+- Armas de calibre restrito
+- Uso exclusivo forças de segurança
+- Porte autorizado
+
+**Exemplos**
+- Pistolas .40 S&W, .45 ACP
+- Revólveres .357 Magnum
+- Carabinas 5.56mm
+- Rifles .308
+
+### Uso Proibido
+- Armas automáticas
+- Armas de guerra
+- Uso exclusivo militar
+
+**Exemplos**
+- Fuzis automáticos
+- Metralhadoras
+- Lançadores
+- Armas químicas/biológicas
+
+## Componentes Principais
+
+### Todas as Armas
+- **Cano**: Tubo por onde passa o projétil
+- **Câmara**: Onde fica o cartucho
+- **Gatilho**: Aciona o disparo
+- **Percussor**: Atinge a espoleta
+- **Coronha/Cabo**: Empunhadura
+
+### Pistolas
+- **Ferrolho (Slide)**: Parte móvel superior
+- **Carregador**: Armazena munição
+- **Extrator**: Remove estojo vazio
+- **Ejetor**: Expulsa estojo
+
+### Revólveres
+- **Tambor**: Câmaras rotativas
+- **Martelo**: Percute a espoleta
+- **Trava do Tambor**: Segura o tambor
+
+### Espingardas/Rifles
+- **Coronha**: Apoio no ombro
+- **Telha**: Parte superior do cano
+- **Guarda-mato**: Proteção do gatilho
+
+## Acessórios Comuns
+
+### Miras
+- **Miras de Ferro**: Tradicionais (massa e alça)
+- **Red Dot**: Ponto vermelho
+- **Holográfica**: Retículo holográfico
+- **Luneta**: Ampliação (rifles)
+- **Laser**: Ponto laser
+
+### Iluminação
+- **Lanterna Tática**: Acoplada à arma
+- **Laser/Lanterna Combo**: Dupla função
+
+### Outros
+- **Silenciador**: Reduz ruído (restrito)
+- **Compensador**: Reduz recuo
+- **Bipé**: Apoio (rifles)
+- **Coldre**: Porta arma
+- **Porta-carregador**: Carregadores extras
+
+## Aplicações na PCDF
+
+### Armamento Padrão
+- **Patrulha**: Pistolas 9mm
+- **Investigação**: Pistolas compactas
+- **Operações Especiais**: Carabinas, espingardas
+- **Precisão**: Rifles de precisão
+
+### Treinamento
+- **Básico**: Pistolas e revólveres
+- **Avançado**: Carabinas e espingardas
+- **Especializado**: Rifles de precisão, submetralhadoras
+
+### Perícia
+- **Identificação**: Tipo de arma por vestígios
+- **Balística**: Análise de projéteis e estojos
+- **Comparação**: Marcas de raiamento
+
+## Curiosidades
+
+1. **Pistola vs Revólver**: Pistola tem carregador, revólver tem tambor.
+
+2. **Calibre de Espingarda**: Quanto menor o número, maior o calibre (12 > 20).
+
+3. **AR-15**: "AR" significa ArmaLite Rifle, não "Assault Rifle".
+
+4. **AK-47**: Kalashnikov 1947, rifle mais produzido do mundo (100+ milhões).
+
+5. **Glock**: Primeira pistola com armação de polímero em larga escala.
+
+6. **Colt 1911**: Design de 1911, ainda em produção após 113 anos.
+
+7. **Revólver**: Mais confiável, mas pistola tem mais capacidade.
+
+8. **Sniper**: Rifles de precisão podem acertar alvos a 2+ km.

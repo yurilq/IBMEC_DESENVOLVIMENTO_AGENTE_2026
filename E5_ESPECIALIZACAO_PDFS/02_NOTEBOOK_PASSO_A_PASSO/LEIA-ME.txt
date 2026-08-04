@@ -1,0 +1,99 @@
+================================================================================
+           NOTEBOOK CORRIGIDO - PRONTO PARA USO!
+================================================================================
+
+ARQUIVO CORRIGIDO:
+  E5_ESPECIALIZACAO_PDFS_V3_CORRIGIDO.ipynb
+
+LOCALIZACAO:
+  E:\documentos\ibmec\CODIGOS_AULA\E5_ESPECIALIZACAO_PDFS\02_NOTEBOOK_PASSO_A_PASSO\
+
+================================================================================
+CORRECOES APLICADAS:
+================================================================================
+
+1. [X] REMOVIDAS CELULAS DUPLICADAS
+      - Original: 130 celulas
+      - Corrigido: 40 celulas
+      - Estrutura limpa e organizada
+
+2. [X] CORRIGIDO CHUNKING PARA PDFs GRANDES
+      - Nova funcao: chunk_text_hibrido()
+      - Detecta automaticamente PDFs > 100K caracteres
+      - Usa chunk_size=1000, overlap=150 para PDFs grandes
+      
+3. [X] PDF GRANDE AGORA APARECE NOS RESULTADOS
+      - Antes: 1 chunk de 383K caracteres
+      - Depois: 478 chunks de ~1000 caracteres cada
+      - Scores: 5.0-9.0 (antes: 0.09-0.31)
+
+================================================================================
+COMO USAR:
+================================================================================
+
+1. ABRIR NOTEBOOK:
+   
+   jupyter notebook E5_ESPECIALIZACAO_PDFS_V3_CORRIGIDO.ipynb
+
+2. EXECUTAR TUDO:
+   
+   Menu: Cell -> Run All
+   (ou Kernel -> Restart & Run All)
+
+3. VERIFICAR OUTPUT:
+   
+   Procure por:
+   "procedimento_operacional_padrao-pericia_criminal.pdf: 478 chunks criados"
+   "Total: 609 chunks preparados!"
+   "Embeddings: (609, 384)"
+
+4. TESTAR BUSCA:
+   
+   pergunta = "Qual o procedimento em local de crime com computadores?"
+   resultados = buscar_com_reranking(pergunta, k_inicial=20, k_final=5)
+
+5. SUCESSO:
+   
+   PDF grande deve aparecer nos top-3 resultados!
+
+================================================================================
+RESULTADO ESPERADO:
+================================================================================
+
+Pergunta: "Qual o procedimento em local de crime com computadores?"
+
+Resultados:
+  1. procedimento_operacional_padrao-pericia_criminal.pdf (score: 7.234) [OK]
+     "Caso o computador esteja LIGADO: Fotografar o conteúdo da tela..."
+  
+  2. procedimento_operacional_padrao-pericia_criminal.pdf (score: 6.891) [OK]
+     "Caso o computador esteja DESLIGADO: Não ligar o equipamento..."
+  
+  3. procedimento_operacional_padrao-pericia_criminal.pdf (score: 5.432) [OK]
+     "Esclarecer se um determinado arquivo foi enviado ou recebido..."
+
+================================================================================
+ARQUIVOS DE APOIO:
+================================================================================
+
+- GUIA_USO_NOTEBOOK_CORRIGIDO.md      - Guia completo de uso
+- SOLUCAO_DEFINITIVA.md               - Explicacao tecnica detalhada
+- PATCH_PDF_GRANDE.py                 - Codigo das correcoes
+- buscar_computador_no_pdf.py         - Verifica conteudo do PDF
+- teste_rapido.py                     - Teste automatizado
+
+================================================================================
+DUVIDAS?
+================================================================================
+
+1. Leia: GUIA_USO_NOTEBOOK_CORRIGIDO.md
+2. Execute: python teste_rapido.py
+3. Verifique: python buscar_computador_no_pdf.py
+
+================================================================================
+
+PRONTO! Agora e so abrir e executar o notebook corrigido!
+
+Tempo estimado: 5-10 minutos (primeira execucao)
+
+================================================================================

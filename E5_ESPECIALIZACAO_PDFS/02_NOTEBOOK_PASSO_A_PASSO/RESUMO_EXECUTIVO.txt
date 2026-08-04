@@ -1,0 +1,81 @@
+================================================================================
+RESUMO EXECUTIVO: Por que o PDF não aparece nos resultados?
+================================================================================
+
+SITUAÇÃO ATUAL:
+---------------
+Você pergunta: "Qual o procedimento em local de crime com computadores?"
+Resposta: boletim_ocorrencia.txt, sistema_sinarm.txt (outros arquivos)
+PDF grande: NÃO APARECE ❌
+
+CAUSA RAIZ:
+-----------
+PDF procedimento_operacional_padrao-pericia_criminal.pdf:
+  ✅ TEM 11 ocorrências da palavra "computador"
+  ✅ TEM informações sobre perícia em computadores
+  ❌ MAS está sendo processado como 1 chunk GIGANTE de 383K caracteres
+  ❌ Embedding trunca e pega só o cabeçalho
+  ❌ Conteúdo sobre computadores é IGNORADO
+
+SOLUÇÃO:
+--------
+1. Aplicar chunking híbrido no notebook
+2. Re-gerar embeddings
+3. Testar novamente
+
+RESULTADO ESPERADO APÓS CORREÇÃO:
+----------------------------------
+Pergunta: "Qual o procedimento em local de crime com computadores?"
+Resposta:
+  1. procedimento_operacional_padrao-pericia_criminal.pdf ✅ (score: 7.2)
+  2. procedimento_operacional_padrao-pericia_criminal.pdf ✅ (score: 6.9)
+  3. procedimento_operacional_padrao-pericia_criminal.pdf ✅ (score: 5.4)
+
+================================================================================
+
+PASSO A PASSO RÁPIDO:
+================================================================================
+
+1. Abra o notebook: E5_ESPECIALIZACAO_PDFS_V2.ipynb
+
+2. Localize PASSO 5 (função chunk_text_semantico)
+   
+3. SUBSTITUA por chunk_text_hibrido (código no arquivo PATCH_PDF_GRANDE.py)
+
+4. Localize PASSO 6 (função preparar_todos_chunks)
+   
+5. SUBSTITUA pela versão corrigida (código no arquivo PATCH_PDF_GRANDE.py)
+
+6. Re-execute as células:
+   - PASSO 6: preparar_todos_chunks()
+     OUTPUT: "✅ procedimento...pdf: 478 chunks criados"
+   
+   - PASSO 8: gerar embeddings
+     OUTPUT: "Embeddings: (609, 384)"
+   
+   - PASSO 12: salvar índice
+
+7. Teste com:
+   pergunta = "Qual o procedimento em local de crime com computadores?"
+   resultados = buscar_com_reranking(pergunta, k_inicial=20, k_final=5)
+
+8. SUCESSO! PDF deve aparecer nos top-5 resultados! 🎉
+
+================================================================================
+
+ARQUIVOS ÚTEIS:
+================================================================================
+
+📄 SOLUCAO_DEFINITIVA.md              - Guia completo passo a passo
+📄 PATCH_PDF_GRANDE.py                - Código completo da correção
+📄 EXPLICACAO_PROBLEMA_PDF_GRANDE.md  - Explicação técnica detalhada
+📄 buscar_computador_no_pdf.py        - Verificar trechos com "computador"
+📄 teste_rapido.py                    - Teste automatizado (5 perguntas)
+
+================================================================================
+
+DÚVIDAS? Execute:
+  python buscar_computador_no_pdf.py    - Ver trechos sobre computador
+  python teste_rapido.py                - Teste completo automatizado
+
+================================================================================

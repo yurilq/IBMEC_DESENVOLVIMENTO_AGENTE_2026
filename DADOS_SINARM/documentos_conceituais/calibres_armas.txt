@@ -1,0 +1,215 @@
+# Calibres de Armas de Fogo
+
+## O que é Calibre?
+
+Calibre é a medida do diâmetro interno do cano de uma arma de fogo, geralmente expressa em milímetros (mm) ou polegadas. O calibre determina o tamanho do projétil que a arma pode disparar.
+
+## Principais Calibres no Brasil
+
+### Calibres Comuns em Pistolas
+
+**9mm (9x19mm Parabellum)**
+- Calibre mais popular no mundo
+- Usado por forças policiais e militares
+- Boa capacidade de munição (15-17 cartuchos)
+- Recuo moderado, fácil controle
+- Alcance efetivo: 50 metros
+
+**.40 S&W (Smith & Wesson)**
+- Desenvolvido para polícia americana
+- Maior poder de parada que 9mm
+- Recuo mais forte
+- Capacidade: 12-15 cartuchos
+- Alcance efetivo: 50 metros
+
+**.45 ACP (Automatic Colt Pistol)**
+- Calibre tradicional americano
+- Grande poder de parada
+- Recuo significativo
+- Capacidade: 7-10 cartuchos
+- Alcance efetivo: 50 metros
+
+**.380 ACP (9mm Curto)**
+- Calibre compacto
+- Usado em armas de porte discreto
+- Menor poder de parada
+- Capacidade: 6-8 cartuchos
+- Alcance efetivo: 25 metros
+
+### Calibres Comuns em Revólveres
+
+**.38 Special**
+- Calibre clássico brasileiro
+- Muito usado pela polícia até anos 90
+- Recuo moderado
+- Capacidade: 5-6 cartuchos
+- Alcance efetivo: 50 metros
+
+**.357 Magnum**
+- Versão mais potente do .38
+- Alto poder de parada
+- Recuo forte
+- Capacidade: 5-6 cartuchos
+- Alcance efetivo: 100 metros
+
+**.22 LR (Long Rifle)**
+- Calibre de treinamento
+- Baixo recuo
+- Baixo custo de munição
+- Capacidade: 6-10 cartuchos
+- Alcance efetivo: 50 metros
+
+### Calibres de Espingardas
+
+**12 (Gauge 12)**
+- Calibre mais comum em espingardas
+- Usado para defesa e caça
+- Grande poder de parada
+- Recuo forte
+- Alcance efetivo: 40 metros (balins), 100 metros (slug)
+
+**20 (Gauge 20)**
+- Menor que calibre 12
+- Recuo mais suave
+- Usado para caça de aves
+- Alcance efetivo: 35 metros
+
+**36 (Gauge 36)**
+- Calibre pequeno
+- Usado para caça de pequenos animais
+- Recuo leve
+- Alcance efetivo: 25 metros
+
+### Calibres de Rifles
+
+**5.56mm (.223 Remington)**
+- Calibre militar padrão OTAN
+- Usado em fuzis como M16 e AR-15
+- Baixo recuo
+- Alcance efetivo: 500 metros
+
+**7.62mm (.308 Winchester)**
+- Calibre militar e de caça
+- Maior poder que 5.56mm
+- Alcance efetivo: 800 metros
+
+**.30-06 Springfield**
+- Calibre clássico de caça
+- Grande poder
+- Alcance efetivo: 1000 metros
+
+## Classificação por Potência
+
+### Baixa Potência
+- .22 LR
+- .25 ACP
+- .32 ACP
+
+### Média Potência
+- .380 ACP
+- .38 Special
+- 9mm
+
+### Alta Potência
+- .40 S&W
+- .45 ACP
+- .357 Magnum
+- .44 Magnum
+
+### Muito Alta Potência
+- .50 AE (Desert Eagle)
+- .500 S&W Magnum
+- Calibres de rifle (.308, .30-06, etc.)
+
+## Legislação Brasileira
+
+### Calibres Permitidos para Civis (CAC)
+- Pistolas e revólveres: até .380 ACP, .38 Special, 9mm
+- Espingardas: calibre 12, 20, 36
+- Rifles: .22 LR (mais comum para civis)
+
+### Calibres Restritos (Uso Exclusivo)
+- .40 S&W (uso policial)
+- .45 ACP (uso policial/militar)
+- .357 Magnum (uso policial)
+- Calibres militares (5.56mm, 7.62mm)
+
+## Fatores que Influenciam a Escolha do Calibre
+
+### Finalidade
+- **Defesa pessoal**: 9mm, .38 Special, .380 ACP
+- **Policial**: 9mm, .40 S&W
+- **Esportivo**: .22 LR, 9mm, .38 Special
+- **Caça**: Depende do animal (.22 LR para pequenos, .308 para grandes)
+
+### Experiência do Atirador
+- **Iniciante**: .22 LR, .380 ACP
+- **Intermediário**: 9mm, .38 Special
+- **Avançado**: .40 S&W, .45 ACP, .357 Magnum
+
+### Capacidade de Munição
+- **Alta capacidade**: 9mm (15-17 cartuchos)
+- **Média capacidade**: .40 S&W (12-15 cartuchos)
+- **Baixa capacidade**: .45 ACP (7-10 cartuchos), revólveres (5-6 cartuchos)
+
+### Custo de Munição
+- **Econômico**: .22 LR
+- **Moderado**: 9mm, .38 Special
+- **Caro**: .40 S&W, .45 ACP, .357 Magnum
+
+## Conversão de Medidas
+
+### Milímetros para Polegadas
+- 9mm ≈ .355 polegadas
+- 10mm ≈ .40 polegadas
+- 11.43mm ≈ .45 polegadas
+
+### Polegadas para Milímetros
+- .22 ≈ 5.6mm
+- .38 ≈ 9.65mm
+- .45 ≈ 11.43mm
+
+## Curiosidades
+
+1. **9mm vs .38 Special**: Apesar de terem diâmetros similares, o 9mm é mais potente devido ao cartucho mais longo.
+
+2. **Calibre 12**: Quanto menor o número, maior o calibre em espingardas (12 é maior que 20).
+
+3. **.357 Magnum**: Pode disparar munição .38 Special, mas o contrário não é seguro.
+
+4. **Calibres Exóticos**: Existem calibres raros como .50 AE (Desert Eagle), .500 S&W Magnum (revólver mais potente do mundo).
+
+5. **Nomenclatura**: Alguns calibres têm nomes comerciais (9mm Parabellum, .40 S&W) que indicam o fabricante ou uso original.
+
+## Referências Técnicas
+
+- **Energia Cinética**: Medida em Joules (J), indica o poder de parada
+- **Velocidade**: Medida em metros por segundo (m/s) ou pés por segundo (fps)
+- **Pressão**: Medida em PSI (pounds per square inch) ou bar
+
+### Exemplos de Energia
+- .22 LR: ~150 J
+- 9mm: ~500 J
+- .40 S&W: ~600 J
+- .45 ACP: ~600 J
+- .357 Magnum: ~900 J
+- 12 Gauge: ~3000 J
+
+## Aplicações na PCDF
+
+### Armamento Padrão
+- Pistolas 9mm (Taurus, Glock)
+- Revólveres .38 Special (uso histórico)
+- Espingardas calibre 12 (operações especiais)
+- Fuzis 5.56mm (grupos táticos)
+
+### Análise Balística
+- Identificação de calibre em cenas de crime
+- Comparação de projéteis
+- Rastreamento de armas por calibre
+- Estatísticas de calibres mais usados em crimes
+
+### Treinamento
+- Iniciantes: .22 LR
+- Qualificação: 9mm, .40 S&W
+- Especialização: Diversos calibres

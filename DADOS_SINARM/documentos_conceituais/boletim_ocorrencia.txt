@@ -1,0 +1,435 @@
+# Boletim de Ocorrência (BO)
+
+## O que é Boletim de Ocorrência?
+
+O Boletim de Ocorrência (BO) é um documento oficial que registra formalmente um fato que pode constituir infração penal ou contravenção. É o primeiro passo para que a polícia tome conhecimento de um crime ou irregularidade.
+
+## Características
+
+### Documento Oficial
+- Emitido por autoridade policial
+- Tem valor legal e probatório
+- Gera número de protocolo único
+- Fica registrado permanentemente
+
+### Gratuito
+- Não há cobrança para registro
+- Direito do cidadão
+- Obrigatório em muitos casos
+
+### Obrigatório
+- Crimes contra o patrimônio
+- Furto ou roubo de armas
+- Perda de documentos
+- Acidentes de trânsito com vítimas
+
+## Tipos de Boletim de Ocorrência
+
+### 1. BO Presencial
+**Como funciona:**
+- Cidadão vai até delegacia
+- Relata os fatos ao escrivão
+- Assina o documento
+- Recebe cópia com número de protocolo
+
+**Quando usar:**
+- Crimes graves
+- Necessidade de exame de corpo delito
+- Apreensão de objetos
+- Prisão em flagrante
+
+**Vantagens:**
+- Atendimento personalizado
+- Esclarecimento de dúvidas
+- Registro imediato de provas
+
+### 2. BO Online (Delegacia Virtual)
+**Como funciona:**
+- Acesso pelo site da polícia
+- Preenchimento de formulário
+- Envio eletrônico
+- Recebe número de protocolo por e-mail
+
+**Quando usar:**
+- Furto (sem violência)
+- Perda de documentos
+- Dano ao patrimônio
+- Crimes menos graves
+
+**Vantagens:**
+- Disponível 24 horas
+- Não precisa ir à delegacia
+- Mais rápido
+- Evita filas
+
+**Limitações:**
+- Não serve para todos os crimes
+- Pode precisar comparecer depois
+- Sem atendimento presencial
+
+### 3. BO por Telefone (190/197)
+**Como funciona:**
+- Ligação para polícia
+- Atendimento telefônico
+- Registro básico
+- Pode gerar BO ou despacho de viatura
+
+**Quando usar:**
+- Emergências
+- Crimes em andamento
+- Necessidade de viatura
+- Flagrante
+
+## Quando Registrar BO?
+
+### Obrigatório
+
+**Furto ou Roubo de Arma**
+- Registro imediato obrigatório
+- Prazo: 24 horas
+- Consequência: responsabilidade por crimes cometidos com a arma
+
+**Furto ou Roubo de Veículo**
+- Necessário para seguro
+- Necessário para baixa no sistema
+
+**Perda de Documentos**
+- RG, CPF, CNH
+- Evita uso indevido
+- Necessário para segunda via
+
+**Acidentes de Trânsito**
+- Com vítimas: obrigatório
+- Sem vítimas: recomendado
+- Necessário para seguro
+
+### Recomendado
+
+**Furto ou Roubo de Celular**
+- Bloquear IMEI
+- Evitar uso indevido
+- Seguro
+
+**Dano ao Patrimônio**
+- Vandalismo
+- Quebra intencional
+- Seguro
+
+**Ameaça ou Lesão Corporal**
+- Registro de provas
+- Medidas protetivas
+- Processo criminal
+
+**Estelionato**
+- Golpes
+- Fraudes
+- Compras indevidas
+
+## Informações Necessárias
+
+### Dados Pessoais
+- Nome completo
+- CPF
+- RG
+- Endereço completo
+- Telefone
+- E-mail
+
+### Dados do Fato
+- **Data**: Dia, hora aproximada
+- **Local**: Endereço completo
+- **Descrição**: O que aconteceu (detalhes)
+- **Autores**: Se conhecidos (nome, características)
+- **Testemunhas**: Nome e contato
+- **Objetos**: Descrição detalhada
+
+### Documentos
+- RG ou CNH
+- Comprovante de residência
+- Nota fiscal (se furto/roubo)
+- Fotos (se houver)
+- Laudos médicos (se lesão)
+
+## Como Fazer BO de Arma
+
+### Furto de Arma
+
+**Informações Obrigatórias:**
+- Número de série da arma
+- Marca e modelo
+- Calibre
+- Número do CR (Certificado de Registro)
+- Data e local do furto
+- Circunstâncias (como aconteceu)
+
+**Documentos:**
+- RG/CPF
+- CR da arma
+- Nota fiscal (se tiver)
+- Comprovante de residência
+
+**Prazo:**
+- Registrar em até 24 horas
+- Atraso pode gerar responsabilidade
+
+**Consequências:**
+- Arma marcada como "furtada" no SINARM
+- Proprietário não responde por crimes com a arma
+- Arma pode ser devolvida se recuperada
+
+### Roubo de Arma
+
+**Diferença do Furto:**
+- Roubo: com violência ou ameaça
+- Furto: sem violência
+
+**Informações Adicionais:**
+- Descrição dos autores
+- Arma usada pelos criminosos (se houver)
+- Ameaças proferidas
+- Lesões sofridas
+
+**Exame de Corpo Delito:**
+- Se houver lesões
+- Obrigatório
+- Feito no IML
+
+### Perda de Arma
+
+**Informações:**
+- Circunstâncias da perda
+- Local onde perdeu
+- Quando percebeu a perda
+- Buscas realizadas
+
+**Prazo:**
+- Registrar imediatamente
+- Evitar responsabilidade
+
+### Apreensão de Arma
+
+**Quando:**
+- Arma apreendida pela polícia
+- Porte ilegal
+- Registro vencido
+- Flagrante de crime
+
+**BO:**
+- Feito pela autoridade policial
+- Proprietário recebe cópia
+- Arma fica sob custódia
+
+## Fluxo do BO
+
+### 1. Registro
+```
+Cidadão → Delegacia → Relato → Digitação → Assinatura → Protocolo
+```
+
+### 2. Análise
+```
+Delegado → Análise → Classificação → Instauração de Inquérito (se necessário)
+```
+
+### 3. Investigação
+```
+Investigadores → Diligências → Coleta de Provas → Oitivas
+```
+
+### 4. Conclusão
+```
+Relatório → Indiciamento (ou não) → Envio ao MP → Processo (ou arquivamento)
+```
+
+## Número do BO
+
+### Formato
+- Exemplo: 2026/00123456-7
+- Ano/Número sequencial-Dígito
+
+### Importância
+- Identificação única
+- Acompanhamento
+- Referência em processos
+- Necessário para seguro
+
+### Como Acompanhar
+- Site da polícia
+- Telefone da delegacia
+- Presencialmente
+- Aplicativo (se disponível)
+
+## Delegacias Especializadas
+
+### Delegacia de Roubos e Furtos
+- Crimes contra patrimônio
+- Furto e roubo de armas
+- Recuperação de objetos
+
+### Delegacia de Homicídios
+- Crimes contra a vida
+- Homicídios com arma de fogo
+- Latrocínio
+
+### Delegacia da Mulher
+- Violência doméstica
+- Ameaça com arma
+- Medidas protetivas
+
+### Delegacia de Crimes Cibernéticos
+- Estelionato online
+- Fraudes
+- Crimes virtuais
+
+### Delegacia Especial (PCDF)
+- Crimes específicos
+- Investigações complexas
+- Operações especiais
+
+## Direitos do Cidadão
+
+### Ao Registrar BO
+- Ser atendido com respeito
+- Ter BO registrado (não pode ser negado)
+- Receber cópia com protocolo
+- Ter sigilo garantido
+- Ser informado sobre andamento
+
+### Após Registro
+- Acompanhar investigação
+- Solicitar cópias
+- Ser informado de diligências
+- Participar de reconhecimento
+- Ser ouvido como vítima
+
+## Erros Comuns
+
+### ❌ Não Registrar
+- "Não vai dar em nada"
+- "É muito trabalho"
+- Consequência: crime não investigado, sem provas
+
+### ❌ Demorar para Registrar
+- Perda de provas
+- Dificuldade de investigação
+- Responsabilidade (no caso de armas)
+
+### ❌ Informações Incompletas
+- Dificulta investigação
+- Pode precisar voltar
+- Atrasa processo
+
+### ❌ Informações Falsas
+- Crime de falsa comunicação
+- Pena: detenção de 1 a 6 meses
+- Multa
+
+## Boletim de Ocorrência e SINARM
+
+### Integração
+- BO de furto/roubo de arma alimenta SINARM
+- Arma marcada como "procurada"
+- Alerta em todo Brasil
+- Facilita recuperação
+
+### Dados Compartilhados
+- Número de série
+- Marca e modelo
+- Calibre
+- Proprietário
+- Data e local do crime
+
+### Recuperação
+- Arma apreendida → consulta SINARM → identifica BO
+- Proprietário notificado
+- Devolução (se procedente)
+
+## Estatísticas
+
+### Tempo Médio
+- Registro presencial: 30-60 minutos
+- Registro online: 10-20 minutos
+- Análise pelo delegado: 1-7 dias
+
+### Volume (estimativas)
+- BOs registrados/ano no Brasil: ~6 milhões
+- BOs de furto/roubo: ~40%
+- BOs de armas: ~1%
+
+### Taxa de Resolução
+- Crimes contra patrimônio: ~10-15%
+- Crimes contra pessoa: ~30-40%
+- Flagrantes: ~90%
+
+## Aplicações na PCDF
+
+### Registro
+- Delegacias da PCDF
+- Sistema informatizado
+- Integração com SINARM
+- Banco de dados unificado
+
+### Investigação
+- Base para inquérito
+- Coleta de provas
+- Oitivas
+- Relatório final
+
+### Estatística
+- Mapeamento de crimes
+- Identificação de padrões
+- Planejamento de ações
+- Políticas públicas
+
+### Inteligência
+- Análise de dados
+- Conexão entre crimes
+- Identificação de quadrilhas
+- Operações preventivas
+
+## Dicas Importantes
+
+### Antes de Fazer BO
+- Anote todos os detalhes
+- Tire fotos (se possível)
+- Identifique testemunhas
+- Reúna documentos
+
+### Durante o Registro
+- Seja claro e objetivo
+- Forneça todos os detalhes
+- Não omita informações
+- Leia antes de assinar
+
+### Após o Registro
+- Guarde o número do BO
+- Acompanhe andamento
+- Atenda convocações
+- Forneça novas informações
+
+## Glossário
+
+- **BO**: Boletim de Ocorrência
+- **Delegacia Virtual**: Registro online de BO
+- **Inquérito Policial**: Investigação formal
+- **Indiciamento**: Apontar suspeito
+- **MP**: Ministério Público
+- **IML**: Instituto Médico Legal
+- **Exame de Corpo Delito**: Perícia em lesões
+- **Flagrante**: Crime em andamento
+- **Diligência**: Ação investigativa
+- **Oitiva**: Depoimento formal
+
+## Referências Legais
+
+- Código de Processo Penal (CPP)
+- Lei 10.826/2003 (Estatuto do Desarmamento)
+- Lei 13.869/2019 (Abuso de Autoridade)
+- Constituição Federal (Art. 144)
+
+## Contatos Úteis
+
+- **Emergência**: 190 (PM), 197 (PC)
+- **Delegacia Virtual**: Site da polícia do seu estado
+- **Ouvidoria**: Reclamações e sugestões
+- **Disque-Denúncia**: 181 (anônimo)
